@@ -6,6 +6,7 @@ version 0.15.1.
 ## Prepare environment
 Install dependencies and update the $PATH
 ```sh
+$ bower install
 $ npm install
 $ source env.sh
 ```
