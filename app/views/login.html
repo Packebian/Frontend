@@ -1,0 +1,33 @@
+<!--
+    Created on : 7 févr. 2017, 09:58:32
+    Author     : Germain Lecorps and Régis Ramel
+-->
+
+<link rel="stylesheet" type="text/css" href="../styles/login.css">
+<script>
+	document.getElementById('rechercheButton').className = 'invisible';
+	document.getElementById('contribButton').className = 'invisible';
+</script>
+<header class="login_header">
+	Login
+</header>
+<form name="form" role="form">
+	<div class="login_form">
+		<label class="login_label" for="username">
+			Username
+		</label>
+		<input type="text" name="username" id="username" class="login_input">
+	</div>
+	<div class="login_form">
+		<label class="login_label" for="password">
+			Password
+		</label>
+		<input type="password" name="password" id="password" class="login_input">
+	</div>
+	<div class="login_actions">
+		<button type="submit" class="btn" onclick="document.getElementById('rechercheButton').className = '';
+													document.getElementById('contribButton').className = '';">
+			Login
+		</button>
+	</div>
+</form>
