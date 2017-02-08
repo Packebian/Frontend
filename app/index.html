@@ -20,13 +20,13 @@
 			<div class="navbar navbar-default" role="navigation">
 				<div class="container">
 					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+						<button id="navButton" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
 							<span class="sr-only">Toggle navigation</span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand">Frontend</a>
+						<a class="navbar-brand">Gestionnaire de packages - Polytech Grenoble</a>
 					</div>
 					<div class="collapse navbar-collapse" id="js-navbar-collapse">
 						<ul class="nav navbar-nav pull-right">
@@ -42,15 +42,25 @@
 							<li id = "rechercheButton">
 								<a href="/#!/recherche" onclick="//document.getElementById('loginButton').className = '';
 																	document.getElementById('rechercheButton').className = 'current-page visible';
-																	document.getElementById('contribButton').className = 'visible';">
+																	document.getElementById('contribButton').className = 'visible';
+																	document.getElementById('faqButton').className = 'visible';">
 									Liste des Packages
 								</a>
 							</li>
 							<li id = "contribButton">
 								<a ng-href="/#!/contribution" onclick="//document.getElementById('loginButton').className = '';
 																		document.getElementById('rechercheButton').className = 'visible';
-																		document.getElementById('contribButton').className = 'current-page visible';">
+																		document.getElementById('contribButton').className = 'current-page visible';
+																		document.getElementById('faqButton').className = 'visible';">
 									Contribution
+								</a>
+							</li>
+							<li id = "faqButton">
+								<a ng-href="/#!/faq" onclick="//document.getElementById('loginButton').className = '';
+																document.getElementById('rechercheButton').className = 'visible';
+																document.getElementById('contribButton').className = 'visible';
+																document.getElementById('faqButton').className = 'current-page visible';">
+									FAQ / Tutoriels
 								</a>
 							</li>
 						</ul>
@@ -75,8 +85,9 @@
                     <div class="widget span3">
                         <h4>About Us</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-                        <p><a href="">Read more...</a></p>
+                        <p><a href="http://air.imag.fr/index.php/Projet_2017_:_Gestionnaire_de_packages_Polytech">Wiki du projet</a></p>
                     </div>
+					<!--
                     <div class="widget span3">
                         <h4>Latest Tweets</h4>
                         <div class="show-tweets"></div>
@@ -85,6 +96,7 @@
                         <h4>Flickr Photos</h4>
                         <ul class="flickr-feed"></ul>
                     </div>
+					-->
                     <div class="widget span3">
                         <h4>Contact Us</h4>
                         <p><i class="icon-map-marker"></i> Address: Polytech Grenoble</p>
