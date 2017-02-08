@@ -6,10 +6,10 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title></title>
+		<title>Gestionnaire de Packages</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
-		<!--Fichiers CSS-->
+		<!--CSS files-->
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
 		<link rel="stylesheet" href="styles/style.css">
 		<link rel="stylesheet" href="styles/flexslider.css">
@@ -39,9 +39,9 @@
 								</a>
 							</li>
 							-->
-							<li id = "rechercheButton">
+							<li id = "searchButton">
 								<a href="/#!/recherche" onclick="//document.getElementById('loginButton').className = '';
-																	document.getElementById('rechercheButton').className = 'current-page visible';
+																	document.getElementById('searchButton').className = 'current-page visible';
 																	document.getElementById('contribButton').className = 'visible';
 																	document.getElementById('faqButton').className = 'visible';">
 									Liste des Packages
@@ -49,7 +49,7 @@
 							</li>
 							<li id = "contribButton">
 								<a ng-href="/#!/contribution" onclick="//document.getElementById('loginButton').className = '';
-																		document.getElementById('rechercheButton').className = 'visible';
+																		document.getElementById('searchButton').className = 'visible';
 																		document.getElementById('contribButton').className = 'current-page visible';
 																		document.getElementById('faqButton').className = 'visible';">
 									Contribution
@@ -57,7 +57,7 @@
 							</li>
 							<li id = "faqButton">
 								<a ng-href="/#!/faq" onclick="//document.getElementById('loginButton').className = '';
-																document.getElementById('rechercheButton').className = 'visible';
+																document.getElementById('searchButton').className = 'visible';
 																document.getElementById('contribButton').className = 'visible';
 																document.getElementById('faqButton').className = 'current-page visible';">
 									FAQ / Tutoriels
@@ -99,23 +99,27 @@
 					-->
                     <div class="widget span3">
                         <h4>Contact Us</h4>
-                        <p><i class="icon-map-marker"></i> Address: Polytech Grenoble</p>
-                        <p><i class="icon-phone"></i> Phone: </p>
-                        <p><i class="icon-user"></i> Skype: </p>
-                        <p><i class="icon-envelope-alt"></i> Email: <a href="">mail</a></p>
+                        <p><i class="icon-map-marker"></i> Address : Polytech Grenoble - 14 Place du Conseil National de la Résistance, 38400 Saint-Martin-d'Hères</p>
+                        <!--
+						<p><i class="icon-phone"></i> Phone : </p>
+                        <p><i class="icon-user"></i> Skype : </p>
+                        <p><i class="icon-envelope-alt"></i> Email : <a href="">mail</a></p>
+						-->
                     </div>
                 </div>
                 <div class="footer-border"></div>
                 <div class="row">
                     <div class="copyright span4">
-                        <p>Polytech Grenoble. Université Grenoble Alpes. RICM5 - 2017. Rémi Gattaz, Germmain Lecorps,  Template by <a href="http://azmind.com">Azmind</a>.</p>
+                        <p>Polytech Grenoble. Université Grenoble Alpes. RICM5 - 2017. Rémi Gattaz, Germain Lecorps, Thibaut Nouguier, Régis Ramel.</p>
                     </div>
+					<!--
                     <div class="social span8">
                         <a class="facebook" href=""></a>
                         <a class="dribbble" href=""></a>
                         <a class="twitter" href=""></a>
                         <a class="pinterest" href=""></a>
                     </div>
+					-->
                 </div>
             </div>
         </footer>
@@ -146,12 +150,12 @@
 		<script src="bower_components/angular-touch/angular-touch.js"></script>
 		<!-- endbower -->
 		<!-- endbuild -->
-
-				<!-- build:js({.tmp,app}) scripts/scripts.js -->
-				<script src="scripts/app.js"></script>
-				<script src="scripts/controllers/main.js"></script>
-				<script src="scripts/controllers/about.js"></script>
-
-				<!-- endbuild -->
+		<!-- build:js({.tmp,app}) scripts/scripts.js -->
+		<script src="scripts/app.js"></script>
+		<script src="scripts/controllers/login.js"></script>
+		<script src="scripts/controllers/search.js"></script>
+		<script src="scripts/controllers/contribution.js"></script>
+		<script src="scripts/controllers/faq.js"></script>
+		<!-- endbuild -->
 </body>
 </html>

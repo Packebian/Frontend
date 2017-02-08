@@ -1,10 +1,30 @@
 <!-- 
-    Created on : 8 févr. 2017, 09:02:32
-    Author     : Germain Lecorps and Régis Ramel
+	Created on	: 8 févr. 2017, 09:02:32
+	Author		: Germain Lecorps and Régis Ramel
 -->
-
-<div id="testJson">Au revoir</div>
-<script>
-	var json = jQuery.getJSON("../faq.json");
-	document.getElementById("testJson").innerHTML = "Bonjour";
-</script>
+<body>
+	<h1>FAQ / Tutoriels</h1>
+	<h2>Tutoriels</h2>
+	<div id="tutorials"></div>
+	<h2>FAQ</h2>
+	<div id="faq"></div>
+	<script>
+		$.getJSON("../json/tutos.json", function(tutos){
+			for(var t in tutos) {
+				var tutorial = "";
+				tutorial += "<h3>" + tutos[t].name + "</h3>";
+				tutorial += "<p>" + tutos[t].content + "</p>";
+				document.getElementById("tutorials").innerHTML += tutorial;
+			}
+		});
+		
+		$.getJSON("../json/faq.json", function(faq){
+			for(var q in faq) {
+				var question = "";
+				question += "<h3>" + faq[q].question + "</h3>";
+				question += "<p>" + faq[q].answer + "</p>";
+				document.getElementById("faq").innerHTML += question;
+			}
+		});
+	</script>
+</body>

@@ -31,17 +31,17 @@ angular
 			})
 			.when('/recherche', {
 				templateUrl: 'views/recherche.html',
-				controller: 'RechercheCtrl',
+				controller: 'SearchCtrl',
 				controllerAs: 'recherche'
 			})
 			.when('/contribution', {
 				templateUrl: 'views/contribution.html',
-				//controller: 'ContributionCtrl',
+				controller: 'ContributionCtrl',
 				controllerAs: 'contribution'
 			})
 			.when('/faq', {
 				templateUrl: 'views/faq.html',
-				//controller: 'FaqCtrl',
+				controller: 'FaqCtrl',
 				controllerAs: 'faq'
 			})
 			.otherwise({
