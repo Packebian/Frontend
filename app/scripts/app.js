@@ -29,10 +29,10 @@ angular
 				controller: 'LoginCtrl',
 				controllerAs: 'login'
 			})
-			.when('/recherche', {
-				templateUrl: 'views/recherche.html',
+			.when('/search', {
+				templateUrl: 'views/search.html',
 				controller: 'SearchCtrl',
-				controllerAs: 'recherche'
+				controllerAs: 'search'
 			})
 			.when('/contribution', {
 				templateUrl: 'views/contribution.html',
