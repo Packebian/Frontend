@@ -2,24 +2,77 @@
     Created on : 7 févr. 2017, 09:58:32
     Author     : Germain Lecorps and Régis Ramel
 -->
+<!Doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+		<!--Fichiers CSS-->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster">
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+		<link rel="stylesheet" href="styles/style.css">
+		<link rel="stylesheet" href="styles/flexslider.css">
+		<link rel="stylesheet" href="styles/font-awesome.css">
+	</head>
 
-<div class="jumbotron">
-	<h1>'Allo, 'Allo!</h1>
-	<p class="lead">
-		<img src="images/yeoman.png" alt="I'm Yeoman"><br>
-		Always a pleasure scaffolding your apps.
-	</p>
-	<p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
-<div class="row marketing">
-	<h4>HTML5 Boilerplate</h4>
-	<p>
-		HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-	</p>
-	<h4>Angular</h4>
-	<p>
-		AngularJS is a toolset for building the framework most suited to your application development.
-	</p>
-	<h4>Karma</h4>
-	<p>Spectacular Test Runner for JavaScript.</p>
-</div>
+
+        <div class="contact-us container">
+           <!-- <div class="row">-->
+
+       		<form class="contact-us">
+                    <p>Ceci est la page proposant le formulaire d'ajout d'un package par un contributeur</p>
+                    	<label for="name_package" class="namepLabel">Nom du package</label><br>
+                    	  <input id="name_package" type="text" name="name_package" placeholder="Entrez le nom du package..."><br>
+                    	<label for="version" class="versionLabel">Version du package</label><br>
+                    	  <input id="name_package" type="text" name="name_package" placeholder="Entrez la version du package sous la forme majeure.mineure.fix..."><br>
+                    	<label for="architecture" class="architectureLabel">Architecture du package</label><br>
+                    	  <select name="version">
+							  <option value="ubuntu">Ubuntu</option>
+							  <option value="debian">Debian</option>
+							  <option value="windows">Windows</option>
+							  <option value="autre">Autre</option>
+						  </select><br>
+                    	<label for="maintainer" class="maintainerLabel">Maintainer</label><br>
+                          <input id="maintainer" type="text" name="maintainer" placeholder="Entrez votre nom et prénom..."><br>
+                        <label for="filiere" class="filiereLabel">Filière</label><br>
+						<label class = "filiere-checkbox">
+						  <input type="checkbox" id="cbox1" value="checkbox1">
+						  RICM3
+						</label>
+						<label class = "filiere-checkbox">
+						  <input type="checkbox" id="cbox1" value="checkbox1">
+						  RICM4
+						</label>                          
+						<label class = "filiere-checkbox">
+						  <input type="checkbox" id="cbox1" value="checkbox1">
+						  RICM5
+						</label>                          
+                         <br>
+                        <label for="matiere">Matière</label><br>
+                          <input id="matiere" type="text" name="matiere" placeholder="Entrez la matière désirée..."><br>
+                        <label for="description" class="descriptionLabel">Description</label><br>
+                          <textarea id="message" name="message" placeholder="Description du package..."></textarea><br>
+                      	<label for="dependance" class="dependanceLabel">Dépendances</label><br>
+                          <input id="dependance" type="text" name="dependance" placeholder="Entrez les dépendances nécessaires pour le package séparées par un ;"><br>
+                        <button type="submit">Valider</button>
+            </form>
+                </div>
+		<!-- build:js(.) scripts/vendor.js -->
+		<!-- bower:js -->
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="bower_components/angular-animate/angular-animate.js"></script>
+		<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+		<script src="bower_components/angular-resource/angular-resource.js"></script>
+		<script src="bower_components/angular-route/angular-route.js"></script>
+		<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+		<script src="bower_components/angular-touch/angular-touch.js"></script>
+		<!-- endbower -->
+		<!-- endbuild -->
+
+</html>

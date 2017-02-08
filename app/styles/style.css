@@ -687,7 +687,7 @@ footer .social a:hover { background-position: left top; }
 /* ----- Form ----- */
 
 .contact-us {
-    margin-top: 20px;
+    margin-top: 30px;
     padding-bottom: 50px;
     text-align: left;
 }
@@ -718,11 +718,11 @@ footer .social a:hover { background-position: left top; }
 
 .contact-us form {
     margin-top: 25px;
-    padding: 0 20px;
+    padding: 0 60px;
 }
 
 .contact-us form input, .contact-us form textarea {
-    width: 90%;
+    width: 80%;
     height: 24px;
     border: 1px solid #ddd;
     -moz-border-radius: 0;
@@ -795,9 +795,12 @@ footer .social a:hover { background-position: left top; }
     font-size: 13px;
 }
 
+
+
 .contact-us form input:-moz-placeholder, .contact-us form textarea:-moz-placeholder { color: #ccc; }
 .contact-us form input:-ms-input-placeholder, .contact-us form textarea:-ms-input-placeholder { color: #ccc; }
 .contact-us form input::-webkit-input-placeholder, .contact-us form textarea::-webkit-input-placeholder { color: #ccc; }
+
 
 /* ----- Google maps ----- */
 
@@ -1132,4 +1135,8 @@ ul.portfolio-img li {
 
 }
 
+/********** ----- CONTRIBUTION PAGE ----- **********/
 
+.filiere-checkbox{
+    padding-right: 30px;
+}
