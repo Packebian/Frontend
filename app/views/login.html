@@ -12,7 +12,7 @@
 <header class="login_header">
 	Login
 </header>
-<form name="form" role="form">
+<form id="form" name="form" role="form">
 	<div class="login_form">
 		<label class="login_label" for="username">
 			Username
@@ -26,10 +26,30 @@
 		<input type="password" name="password" id="password" class="login_input">
 	</div>
 	<div class="login_actions">
-		<button type="submit" class="btn" onclick="document.getElementById('searchButton').className = '';
-													document.getElementById('contribButton').className = '';
-													document.getElementById('faqButton').className = '';">
+		<button type="submit" class="btn" onclick="login()">
 			Login
 		</button>
 	</div>
 </form>
+<script>
+	function login() {
+		var bypass = true;
+		console.log("toto");
+		if(!bypass) {
+			var username = document.getElementById('username').value;
+			var password = document.getElementById('password').value;
+		}
+		else {
+			var username = "laRoulade";
+			var password = "RAVH";
+		}
+		if(username === "laRoulade" & password === "RAVH") {
+			document.getElementById('searchButton').className = '';
+			document.getElementById('contribButton').className = '';
+			document.getElementById('faqButton').className = '';
+		}
+		else {
+			document.getElementById("form").innerHTML += "Échec d'authentification";
+		}
+	}
+</script>
