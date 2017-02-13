@@ -1,20 +1,24 @@
 <!-- 
-    Created on : 7 févr. 2017, 09:58:32
-    Author     : Germain Lecorps and Régis Ramel
+		Created on : 7 févr. 2017, 09:58:32
+		Author		 : Germain Lecorps and Régis Ramel
 -->
 
-<p>Liste des packages</p>
 
-  <div ng-controller="SearchCtrl">
-    <form class="form-inline">
-      <input ng-model="query" type="text"
-        placeholder="Filter by" autofocus>
-    </form>
-    <ul ng-repeat="friend in friends | filter:query | orderBy: 'name' ">
-      <li>{{friend.name}}</li>
-    </ul>
-  </div>
-</body>
+<h1>Liste des packages</h1>
+<div ng-controller="SearchCtrl">
+	<form class="form-inline">
+	<input ng-model="query" type="text" placeholder="Rechercher..." autofocus><br><br>
+	<table border="1" width="100%">
+		<tr>
+			<th ng-click="orderByMe('name')">Name</th>
+			<th ng-click="orderByMe('matiere')">Matière</th>
+		</tr>
+		<tr ng-repeat="package in packages | filter:query | orderBy: order ">
+		<td>{{package.name}}</td>
+		<td>{{package.matiere}}</td>
+		</tr>
+	</table>
+</div>
 
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>

@@ -1,9 +1,15 @@
 /* 
-    Created on : 7 févr. 2017, 09:58:32
-    Author     : Germain Lecorps and Régis Ramel
+		Created on : 7 févr. 2017, 09:58:32
+		Author		 : Germain Lecorps and Régis Ramel
 */
 
 'use strict';
+
+var liste;
+$.getJSON('../../json/liste.json', function(data) { 
+		liste = data;
+	});
+	
 
 /**
  * @ngdoc function
@@ -13,19 +19,15 @@
  * Controller of the frontendApp
  */
 angular.module('frontendApp')
-  .controller('SearchCtrl', function ($scope) {
-	  $scope.friends = [
-	    { name: "Peter",   age: 20 },
-	    { name: "Pablo",   age: 55 },
-	    { name: "Linda",   age: 20 },
-	    { name: "Marta",   age: 37 },
-	    { name: "Othello", age: 20 },
-	    { name: "Markus",  age: 32 }
-	  ];
+	.controller('SearchCtrl', function ($scope) {
+		$scope.packages = liste;
 	this.awesomeThings = [
-	  'HTML5 Boilerplate',
-	  'AngularJS',
-	  'Karma'
+		'HTML5 Boilerplate',
+		'AngularJS',
+		'Karma'
 	];
-  });
+	$scope.orderByMe = function(x) {
+		$scope.order = x;
+	}
+});
 
