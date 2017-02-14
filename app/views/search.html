@@ -6,21 +6,21 @@
 
 <h1>Liste des packages</h1>
 <div ng-controller="SearchCtrl">
-<div class = "tableBfont"
-<div class = "wrapperB">
-	<form class="form-inline">
-	<input ng-model="query" type="text" placeholder="Rechercher..." autofocus><br><br>
-	<table class = "tableB" border="1" width="100%">
-		<tr class = "rowB headerB blue" >
-			<th style = "text-align: center" ng-click="orderByMe('name')">Nom</th>
-			<th style = "text-align: center" ng-click="orderByMe('matiere')">Matière</th>
-		</tr>
-		<tr class = "rowB" ng-repeat="package in packages | filter:query | orderBy: order ">
-		<td class ="cellB">{{package.name}}</td>
-		<td class ="cellB">{{package.matiere}}</td>
-		</tr>
-	</table>
-	</div>
+	<div class = "tableBfont">
+		<div class = "wrapperB">
+			<form class="form-inline">
+			<input ng-model="query" type="text" placeholder="Rechercher..." autofocus><br><br>
+			<table class = "tableB" border="1" width="100%">
+				<tr class = "rowB headerB blue" >
+					<th style = "text-align: center" ng-click="orderByMe('infos.name')">Nom</th>
+					<th style = "text-align: center" ng-click="orderByMe('infos.class')">Matière</th>
+				</tr>
+				<tr class = "rowB" ng-repeat="package in packages | filter:query | orderBy: order ">
+				<td class ="cellB">{{package.infos.name}}</td>
+				<td class ="cellB">{{package.infos.class}}</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 </div>
 

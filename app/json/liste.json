@@ -1,7 +1,83 @@
 [
-	{ "name": "Paraview", "matiere": "Visu" },
-	{ "name": "Lustre", "matiere": "ALM" },
-	{ "name": "Rstudio", "matiere": "PS" }
+  {
+    "user": {
+      "username": "vdanjean",
+      "lastname": "DANJEAN",
+      "firstname": "Vincent",
+      "email": "vincent.danjean@imag.fr",
+      "userlevel": 2,
+      "id": 1,
+      "createdAt": "2017-02-14T14:35:13.000Z",
+      "updatedAt": "2017-02-14T14:35:13.000Z"
+    },
+    "infos": {
+      "name": "paraview",
+      "maintainer": "vincent.danjean@imag.fr",
+      "architecture": "all",
+      "major": "RICM5",
+      "class": "VISU",
+      "description": "open-source photoshop",
+      "dependencies": "python",
+      "id": 1,
+      "createdAt": "2017-02-14T14:35:13.000Z",
+      "updatedAt": "2017-02-14T14:35:13.000Z"
+    },
+    "id": 1,
+    "createdAt": "2017-02-14T14:35:13.000Z",
+    "updatedAt": "2017-02-14T14:35:13.000Z"
+  },
+  {
+    "user": {
+      "username": "npalix",
+      "lastname": "PALIX",
+      "firstname": "Nicolas",
+      "email": "nicolas.palix@imag.fr",
+      "userlevel": 1,
+      "id": 2,
+      "createdAt": "2017-02-14T14:35:13.000Z",
+      "updatedAt": "2017-02-14T14:35:13.000Z"
+    },
+    "infos": {
+      "name": "lustre",
+      "maintainer": "nicolas.palix@imag.fr",
+      "architecture": "all",
+      "major": "RICM5",
+      "class": "ALM1",
+      "description": "boole algebra",
+      "dependencies": "",
+      "id": 2,
+      "createdAt": "2017-02-14T14:35:13.000Z",
+      "updatedAt": "2017-02-14T14:35:13.000Z"
+    },
+    "id": 2,
+    "createdAt": "2017-02-14T14:35:13.000Z",
+    "updatedAt": "2017-02-14T14:35:13.000Z"
+  },
+  {
+    "user": {
+      "username": "pmorat",
+      "lastname": "MORAT",
+      "firstname": "Philippe",
+      "email": "phillipe.morat@imag.fr",
+      "userlevel": 0,
+      "id": 3,
+      "createdAt": "2017-02-14T14:35:13.000Z",
+      "updatedAt": "2017-02-14T14:35:13.000Z"
+    },
+    "infos": {
+      "name": "r-studio",
+      "maintainer": "phillipe.morat@imag.fr",
+      "architecture": "all",
+      "major": "RICM5",
+      "class": "PS",
+      "description": "IDE for R",
+      "dependencies": "r",
+      "id": 3,
+      "createdAt": "2017-02-14T14:35:13.000Z",
+      "updatedAt": "2017-02-14T14:35:13.000Z"
+    },
+    "id": 3,
+    "createdAt": "2017-02-14T14:35:13.000Z",
+    "updatedAt": "2017-02-14T14:35:13.000Z"
+  }
 ]
-
-
