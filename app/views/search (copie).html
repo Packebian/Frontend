@@ -8,15 +8,33 @@
 <div ng-controller="SearchCtrl">
 	<div class = "tableBfont">
 		<div class = "wrapperB">
-			<form class="form-inline">
-			<input ng-model="query" type="text" placeholder="Rechercher..." autofocus><br><br>
+			<!--<input ng-model ="userQuery" ng-change="setSearchFilter()" type="text" placeholder="Rechercher..." />
+		        <select ng-model="searchOn" ng-change="setSearchFilter()">
+		            <option value="name">Nom</option>
+		            <option value="infos.class">Class</option>
+		            <option value="infos.major">Major</option>
+		            <option value="infos.maintainer">Main</option>
+		        </select><br><br>-->
+		        
+              <label>Filtre</label> <input type="text" ng-model="search[filtre]"> by {{filtre}} <br>
+			      <ul>
+			      <li><a href="" ng-click="changeFilterTo('$')">Any</a></li>
+			      <li><a href="" ng-click="changeFilterTo('package.infos.name')">By Name</a></li>
+			      <li><a href="" ng-click="changeFilterTo('package.infos.class')">By phone</a></li>
+			      </ul>
+
 			<table class = "tableB" border="1" width="100%">
 				<tr class = "rowB headerB blue" >
 					<th style = "text-align: center" ng-click="orderByMe('infos.name')">Nom</th>
+					<th style = "text-align: center" ng-click="orderByMe('infos.maintainer')">Maintainer</th>
+					<th style = "text-align: center" ng-click="orderByMe('infos.major')">Filière</th>
 					<th style = "text-align: center" ng-click="orderByMe('infos.class')">Matière</th>
+
 				</tr>
-				<tr class = "rowB" ng-repeat="package in packages | filter:query | orderBy: order ">
+				<tr class = "rowB" ng-repeat="package in packages | filter: search | orderBy: order ">
 				<td class ="cellB">{{package.infos.name}}</td>
+				<td class ="cellB">{{package.infos.maintainer}}</td>
+				<td class ="cellB">{{package.infos.major}}</td>
 				<td class ="cellB">{{package.infos.class}}</td>
 				</tr>
 			</table>

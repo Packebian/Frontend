@@ -6,9 +6,16 @@
 'use strict';
 
 var liste;
+var fromage;
+/*
 $.getJSON('../../json/liste.json', function(data) { 
 		liste = data;
 	});
+	*/
+$.getJSON('../../json/fromage.json', function(data) { 
+		fromage = data;
+	});
+
 	
 
 /**
@@ -20,7 +27,7 @@ $.getJSON('../../json/liste.json', function(data) {
  */
 angular.module('frontendApp')
 	.controller('SearchCtrl', function ($scope) {
-		$scope.packages = liste;
+		$scope.packages = fromage;
 	this.awesomeThings = [
 		'HTML5 Boilerplate',
 		'AngularJS',
@@ -29,5 +36,18 @@ angular.module('frontendApp')
 	$scope.orderByMe = function(x) {
 		$scope.order = x;
 	}
+    $scope.filtre = "$";
+		$scope.search = {name:'', class:'', $:''};
+	$scope.changeFilterTo = function(pr) {
+    	$scope.filtre = pr; 
+    }
+    $scope.setSearchFilter = function()
+    {
+        $scope.searchFilter = {};
+        $scope.searchFilter[$scope.searchOn] = $scope.userQuery;
+    }
+
+
+
 });
 
