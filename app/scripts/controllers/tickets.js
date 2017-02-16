@@ -20,7 +20,7 @@ $.getJSON('../../json/tickets.json', function(data) {
 		}
 	}
 	jsonFormate += ']';
-	packages = JSON.parse(jsonFormate);
+	tickets = JSON.parse(jsonFormate);
 });
 
 

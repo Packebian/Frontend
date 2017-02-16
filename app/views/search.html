@@ -9,10 +9,11 @@
 		<div class = "wrapperB">
 			<input ng-model ="userQuery" ng-change="setSearchFilter()" type="text" placeholder="Rechercher..." />
 			<select ng-model="searchOn" ng-change="setSearchFilter()">
+				<option value="$">Any</option>
 				<option value="name">Nom</option>
-				<option value="class">Class</option>
-				<option value="major">Major</option>
-				<option value="maintainer">Main</option>
+				<option value="class">Matière</option>
+				<option value="major">Filière</option>
+				<option value="maintainer">Maintainer</option>
 			</select>
 			<br><br>
 			<table class = "tableB" border="1" width="100%">
