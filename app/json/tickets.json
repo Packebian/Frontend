@@ -1,83 +1,190 @@
 [
   {
+    "votes": [
+      {
+        "user": "58a42055d5ef19d5f69cd3fb",
+        "vote": 1,
+        "ticket": "58a5702f90b3871c00e9fc96",
+        "createdAt": "2017-02-16T10:32:36.134Z",
+        "updatedAt": "2017-02-16T10:32:36.134Z",
+        "id": "58a57fc4db11ec1b005732ca"
+      },
+      {
+        "user": "58a4208dd5ef19d5f69cd3fc",
+        "vote": 1,
+        "ticket": "58a5702f90b3871c00e9fc96",
+        "createdAt": "2017-02-16T10:32:36.137Z",
+        "updatedAt": "2017-02-16T10:32:36.137Z",
+        "id": "58a57fc4db11ec1b005732cb"
+      },
+      {
+        "user": "58a4208dd5ef19d5f69cd3fd",
+        "vote": -1,
+        "ticket": "58a5702f90b3871c00e9fc96",
+        "createdAt": "2017-02-16T10:32:36.137Z",
+        "updatedAt": "2017-02-16T10:32:36.137Z",
+        "id": "58a57fc4db11ec1b005732cc"
+      }
+    ],
     "user": {
       "username": "vdanjean",
       "lastname": "DANJEAN",
       "firstname": "Vincent",
       "email": "vincent.danjean@imag.fr",
       "userlevel": 2,
-      "id": 1,
-      "createdAt": "2017-02-14T14:35:13.000Z",
-      "updatedAt": "2017-02-14T14:35:13.000Z"
+      "createdAt": "2017-02-16T10:32:35.423Z",
+      "updatedAt": "2017-02-16T10:32:35.423Z",
+      "id": "58a42055d5ef19d5f69cd3fb"
     },
-    "infos": {
-      "name": "paraview",
-      "maintainer": "vincent.danjean@imag.fr",
-      "architecture": "all",
-      "major": "RICM5",
-      "class": "VISU",
-      "description": "open-source photoshop",
-      "dependencies": "python",
-      "id": 1,
-      "createdAt": "2017-02-14T14:35:13.000Z",
-      "updatedAt": "2017-02-14T14:35:13.000Z"
-    },
-    "id": 1,
-    "createdAt": "2017-02-14T14:35:13.000Z",
-    "updatedAt": "2017-02-14T14:35:13.000Z"
+    "status": 1,
+    "name": "processim",
+    "maintainer": "vincent.danjean@imag.fr",
+    "architecture": "all",
+    "major": "RICM3",
+    "class": "ALM",
+    "description": "Code you processor",
+    "dependencies": "gcc",
+    "versions": [
+      "1.0",
+      "1.1",
+      "1.2"
+    ],
+    "createdAt": "2017-02-16T10:32:35.793Z",
+    "updatedAt": "2017-02-16T10:32:35.793Z",
+    "id": "58a5702f90b3871c00e9fc96"
   },
   {
+    "votes": [],
     "user": {
       "username": "npalix",
       "lastname": "PALIX",
       "firstname": "Nicolas",
       "email": "nicolas.palix@imag.fr",
       "userlevel": 1,
-      "id": 2,
-      "createdAt": "2017-02-14T14:35:13.000Z",
-      "updatedAt": "2017-02-14T14:35:13.000Z"
+      "createdAt": "2017-02-16T10:32:35.434Z",
+      "updatedAt": "2017-02-16T10:32:35.434Z",
+      "id": "58a4208dd5ef19d5f69cd3fc"
     },
-    "infos": {
-      "name": "lustre",
-      "maintainer": "nicolas.palix@imag.fr",
-      "architecture": "all",
-      "major": "RICM5",
-      "class": "ALM1",
-      "description": "boole algebra",
-      "dependencies": "",
-      "id": 2,
-      "createdAt": "2017-02-14T14:35:13.000Z",
-      "updatedAt": "2017-02-14T14:35:13.000Z"
-    },
-    "id": 2,
-    "createdAt": "2017-02-14T14:35:13.000Z",
-    "updatedAt": "2017-02-14T14:35:13.000Z"
+    "status": 1,
+    "name": "umldesigner",
+    "maintainer": "nicolas.palix@imag.fr",
+    "architecture": "all",
+    "major": "RICM4",
+    "class": "GL",
+    "description": "Design your applications using UML",
+    "dependencies": "java",
+    "versions": [
+      "5.1"
+    ],
+    "createdAt": "2017-02-16T10:32:35.794Z",
+    "updatedAt": "2017-02-16T10:32:35.794Z",
+    "id": "58a5702f90b3871c00e9fc94"
   },
   {
+    "votes": [
+      {
+        "user": "58a42055d5ef19d5f69cd3fb",
+        "vote": 1,
+        "ticket": "58a5702f90b3871c00e9fc95",
+        "createdAt": "2017-02-16T10:32:36.140Z",
+        "updatedAt": "2017-02-16T10:32:36.140Z",
+        "id": "58a57fc4db11ec1b005732cd"
+      },
+      {
+        "user": "58a4208dd5ef19d5f69cd3fc",
+        "vote": 1,
+        "ticket": "58a5702f90b3871c00e9fc95",
+        "createdAt": "2017-02-16T10:32:36.141Z",
+        "updatedAt": "2017-02-16T10:32:36.141Z",
+        "id": "58a57fc4db11ec1b005732ce"
+      },
+      {
+        "user": "58a4208dd5ef19d5f69cd3fd",
+        "vote": 1,
+        "ticket": "58a5702f90b3871c00e9fc95",
+        "createdAt": "2017-02-16T10:32:36.142Z",
+        "updatedAt": "2017-02-16T10:32:36.142Z",
+        "id": "58a57fc4db11ec1b005732cf"
+      }
+    ],
     "user": {
       "username": "pmorat",
       "lastname": "MORAT",
       "firstname": "Philippe",
       "email": "phillipe.morat@imag.fr",
       "userlevel": 0,
-      "id": 3,
-      "createdAt": "2017-02-14T14:35:13.000Z",
-      "updatedAt": "2017-02-14T14:35:13.000Z"
+      "createdAt": "2017-02-16T10:32:35.439Z",
+      "updatedAt": "2017-02-16T10:32:35.439Z",
+      "id": "58a4208dd5ef19d5f69cd3fd"
     },
-    "infos": {
-      "name": "r-studio",
-      "maintainer": "phillipe.morat@imag.fr",
-      "architecture": "all",
-      "major": "RICM5",
-      "class": "PS",
-      "description": "IDE for R",
-      "dependencies": "r",
-      "id": 3,
-      "createdAt": "2017-02-14T14:35:13.000Z",
-      "updatedAt": "2017-02-14T14:35:13.000Z"
+    "status": 1,
+    "name": "eclipse",
+    "maintainer": "phillipe.morat@imag.fr",
+    "architecture": "all",
+    "major": "RICM3",
+    "class": "AOO",
+    "description": "Java IDE",
+    "dependencies": "java",
+    "versions": [
+      "4",
+      "5",
+      "6"
+    ],
+    "createdAt": "2017-02-16T10:32:35.795Z",
+    "updatedAt": "2017-02-16T10:32:35.795Z",
+    "id": "58a5702f90b3871c00e9fc95"
+  },
+  {
+    "votes": [
+      {
+        "user": "58a42055d5ef19d5f69cd3fb",
+        "vote": 1,
+        "ticket": "58a5702f90b3871c00e9fc97",
+        "createdAt": "2017-02-16T10:32:36.127Z",
+        "updatedAt": "2017-02-16T10:32:36.127Z",
+        "id": "58a57fc4db11ec1b005732c7"
+      },
+      {
+        "user": "58a4208dd5ef19d5f69cd3fc",
+        "vote": -1,
+        "ticket": "58a5702f90b3871c00e9fc97",
+        "createdAt": "2017-02-16T10:32:36.130Z",
+        "updatedAt": "2017-02-16T10:32:36.130Z",
+        "id": "58a57fc4db11ec1b005732c8"
+      },
+      {
+        "user": "58a4208dd5ef19d5f69cd3fd",
+        "vote": 1,
+        "ticket": "58a5702f90b3871c00e9fc97",
+        "createdAt": "2017-02-16T10:32:36.131Z",
+        "updatedAt": "2017-02-16T10:32:36.131Z",
+        "id": "58a57fc4db11ec1b005732c9"
+      }
+    ],
+    "user": {
+      "username": "pmorat",
+      "lastname": "MORAT",
+      "firstname": "Philippe",
+      "email": "phillipe.morat@imag.fr",
+      "userlevel": 0,
+      "createdAt": "2017-02-16T10:32:35.439Z",
+      "updatedAt": "2017-02-16T10:32:35.439Z",
+      "id": "58a4208dd5ef19d5f69cd3fd"
     },
-    "id": 3,
-    "createdAt": "2017-02-14T14:35:13.000Z",
-    "updatedAt": "2017-02-14T14:35:13.000Z"
+    "status": -1,
+    "name": "netbeans",
+    "maintainer": "phillipe.morat@imag.fr",
+    "architecture": "all",
+    "major": "RICM3",
+    "class": "AOO",
+    "description": "Java IDE",
+    "dependencies": "java",
+    "versions": [
+      "8.1",
+      "9"
+    ],
+    "createdAt": "2017-02-16T10:32:35.801Z",
+    "updatedAt": "2017-02-16T10:32:35.801Z",
+    "id": "58a5702f90b3871c00e9fc97"
   }
 ]

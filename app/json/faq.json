@@ -1,12 +1,12 @@
 [
-{
-	"question" : "Monsieur, comment on fait une matrice en Python ?",
-	"answer" : "Je sais pas, cherche sur Google. Débrouille toi putain !!!"
-},
-{
-	"question" : "Papa, c'est quoi cette bouteille de lait ?",
-	"answer" : "Tu vois, ça c'est ma bite, et ça c'est ta mère !" 
-}
+	{
+		"question" : "Monsieur, comment on fait une matrice en Python ?",
+		"answer" : "Je sais pas, cherche sur Google."
+	},
+	{
+		"question" : "Papa, c'est quoi cette bouteille de lait ?",
+		"answer" : "Tu vois, ça c'est ma bite, et ça c'est ta mère !" 
+	}
 ]
 
 

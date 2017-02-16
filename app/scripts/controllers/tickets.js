@@ -8,6 +8,7 @@
 var tickets;
 
 $.getJSON('../../json/tickets.json', function(data) {
+	/*
 	var jsonFormate = '[';
 	for (var d in data) {
 		jsonFormate += '{';
@@ -21,6 +22,8 @@ $.getJSON('../../json/tickets.json', function(data) {
 	}
 	jsonFormate += ']';
 	tickets = JSON.parse(jsonFormate);
+	*/
+	tickets = data;
 });
 
 

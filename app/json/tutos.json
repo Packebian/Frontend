@@ -1,12 +1,12 @@
 [
-{
-	"name" : "Tutoriel d'installation",
-	"content" : "Faut faire sudo apt-get install, espèce d'abruti !" 
-},
-{
-	"name" : "Tutoriel de contribution",
-	"content" : "C'est pour déposer des packages, bande de cons !" 
-}
+	{
+		"name" : "Tutoriel d'installation :",
+		"content" : "Faut faire sudo apt-get install." 
+	},
+	{
+		"name" : "Tutoriel de contribution :",
+		"content" : "C'est pour déposer des packages." 
+	}
 ]
 
 

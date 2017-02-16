@@ -1,83 +1,217 @@
 [
   {
+    "builds": [
+      {
+        "start": "2017-02-16T10:20:13.900Z",
+        "package": "4ac26132d5ef125de13bac33",
+        "version": "1.2",
+        "result": "[ERR-500] No executable was found",
+        "createdAt": "2017-02-16T10:32:36.662Z",
+        "updatedAt": "2017-02-16T10:32:36.662Z",
+        "id": "58a57fc4db11ec1b005732d4"
+      },
+      {
+        "start": "2017-02-16T10:50:13.900Z",
+        "package": "4ac26132d5ef125de13bac33",
+        "version": "1.2",
+        "result": "Success",
+        "createdAt": "2017-02-16T10:32:36.664Z",
+        "updatedAt": "2017-02-16T10:32:36.664Z",
+        "id": "58a57fc4db11ec1b005732d5"
+      }
+    ],
+    "messages": [],
     "user": {
       "username": "vdanjean",
       "lastname": "DANJEAN",
       "firstname": "Vincent",
       "email": "vincent.danjean@imag.fr",
       "userlevel": 2,
-      "id": 1,
-      "createdAt": "2017-02-14T14:35:13.000Z",
-      "updatedAt": "2017-02-14T14:35:13.000Z"
+      "createdAt": "2017-02-16T10:32:35.423Z",
+      "updatedAt": "2017-02-16T10:32:35.423Z",
+      "id": "58a42055d5ef19d5f69cd3fb"
     },
-    "infos": {
-      "name": "paraview",
+    "ticket": {
+      "user": "58a42055d5ef19d5f69cd3fb",
+      "status": 1,
+      "name": "processim",
       "maintainer": "vincent.danjean@imag.fr",
       "architecture": "all",
-      "major": "RICM5",
-      "class": "VISU",
-      "description": "open-source photoshop",
-      "dependencies": "python",
-      "id": 1,
-      "createdAt": "2017-02-14T14:35:13.000Z",
-      "updatedAt": "2017-02-14T14:35:13.000Z"
+      "major": "RICM3",
+      "class": "ALM",
+      "description": "Code you processor",
+      "dependencies": "gcc",
+      "versions": [
+        "1.0",
+        "1.1",
+        "1.2"
+      ],
+      "createdAt": "2017-02-16T10:32:35.793Z",
+      "updatedAt": "2017-02-16T10:32:35.793Z",
+      "id": "58a5702f90b3871c00e9fc96"
     },
-    "id": 1,
-    "createdAt": "2017-02-14T14:35:13.000Z",
-    "updatedAt": "2017-02-14T14:35:13.000Z"
+    "name": "processim",
+    "maintainer": "vincent.danjean@imag.fr",
+    "architecture": "all",
+    "major": "RICM3",
+    "class": "ALM",
+    "description": "Code you processor",
+    "dependencies": "gcc",
+    "versions": [
+      "1.0",
+      "1.1",
+      "1.2"
+    ],
+    "createdAt": "2017-02-16T10:32:36.554Z",
+    "updatedAt": "2017-02-16T10:32:36.554Z",
+    "id": "4ac26132d5ef125de13bac33"
   },
   {
+    "builds": [],
+    "messages": [],
     "user": {
       "username": "npalix",
       "lastname": "PALIX",
       "firstname": "Nicolas",
       "email": "nicolas.palix@imag.fr",
       "userlevel": 1,
-      "id": 2,
-      "createdAt": "2017-02-14T14:35:13.000Z",
-      "updatedAt": "2017-02-14T14:35:13.000Z"
+      "createdAt": "2017-02-16T10:32:35.434Z",
+      "updatedAt": "2017-02-16T10:32:35.434Z",
+      "id": "58a4208dd5ef19d5f69cd3fc"
     },
-    "infos": {
-      "name": "lustre",
+    "ticket": {
+      "user": "58a4208dd5ef19d5f69cd3fc",
+      "status": 1,
+      "name": "umldesigner",
       "maintainer": "nicolas.palix@imag.fr",
       "architecture": "all",
-      "major": "RICM5",
-      "class": "ALM1",
-      "description": "boole algebra",
-      "dependencies": "",
-      "id": 2,
-      "createdAt": "2017-02-14T14:35:13.000Z",
-      "updatedAt": "2017-02-14T14:35:13.000Z"
+      "major": "RICM4",
+      "class": "GL",
+      "description": "Design your applications using UML",
+      "dependencies": "java",
+      "versions": [
+        "5.1"
+      ],
+      "createdAt": "2017-02-16T10:32:35.794Z",
+      "updatedAt": "2017-02-16T10:32:35.794Z",
+      "id": "58a5702f90b3871c00e9fc94"
     },
-    "id": 2,
-    "createdAt": "2017-02-14T14:35:13.000Z",
-    "updatedAt": "2017-02-14T14:35:13.000Z"
+    "name": "umldesigner",
+    "maintainer": "nicolas.palix@imag.fr",
+    "architecture": "all",
+    "major": "RICM4",
+    "class": "GL",
+    "description": "Design your applications using UML",
+    "dependencies": "java",
+    "versions": [
+      "5.1"
+    ],
+    "createdAt": "2017-02-16T10:32:36.557Z",
+    "updatedAt": "2017-02-16T10:32:36.557Z",
+    "id": "4ac26132d5ef125de13bac34"
   },
   {
+    "builds": [
+      {
+        "start": "2017-02-16T10:23:13.900Z",
+        "package": "4ac26132d5ef125de13bac35",
+        "version": "4",
+        "result": "Success",
+        "createdAt": "2017-02-16T10:32:36.665Z",
+        "updatedAt": "2017-02-16T10:32:36.665Z",
+        "id": "58a57fc4db11ec1b005732d6"
+      },
+      {
+        "start": "2017-02-16T10:23:14.210Z",
+        "package": "4ac26132d5ef125de13bac35",
+        "version": "5",
+        "result": "Success",
+        "createdAt": "2017-02-16T10:32:36.666Z",
+        "updatedAt": "2017-02-16T10:32:36.666Z",
+        "id": "58a57fc4db11ec1b005732d7"
+      },
+      {
+        "start": "2017-02-16T10:23:14.430Z",
+        "package": "4ac26132d5ef125de13bac35",
+        "version": "6",
+        "result": "Success",
+        "createdAt": "2017-02-16T10:32:36.667Z",
+        "updatedAt": "2017-02-16T10:32:36.667Z",
+        "id": "58a57fc4db11ec1b005732d8"
+      }
+    ],
+    "messages": [],
     "user": {
       "username": "pmorat",
       "lastname": "MORAT",
       "firstname": "Philippe",
       "email": "phillipe.morat@imag.fr",
       "userlevel": 0,
-      "id": 3,
-      "createdAt": "2017-02-14T14:35:13.000Z",
-      "updatedAt": "2017-02-14T14:35:13.000Z"
+      "createdAt": "2017-02-16T10:32:35.439Z",
+      "updatedAt": "2017-02-16T10:32:35.439Z",
+      "id": "58a4208dd5ef19d5f69cd3fd"
     },
-    "infos": {
-      "name": "r-studio",
+    "ticket": {
+      "user": "58a4208dd5ef19d5f69cd3fd",
+      "status": 1,
+      "name": "eclipse",
       "maintainer": "phillipe.morat@imag.fr",
       "architecture": "all",
-      "major": "RICM5",
-      "class": "PS",
-      "description": "IDE for R",
-      "dependencies": "r",
-      "id": 3,
-      "createdAt": "2017-02-14T14:35:13.000Z",
-      "updatedAt": "2017-02-14T14:35:13.000Z"
+      "major": "RICM3",
+      "class": "AOO",
+      "description": "Java IDE",
+      "dependencies": "java",
+      "versions": [
+        "4",
+        "5",
+        "6"
+      ],
+      "createdAt": "2017-02-16T10:32:35.795Z",
+      "updatedAt": "2017-02-16T10:32:35.795Z",
+      "id": "58a5702f90b3871c00e9fc95"
     },
-    "id": 3,
-    "createdAt": "2017-02-14T14:35:13.000Z",
-    "updatedAt": "2017-02-14T14:35:13.000Z"
+    "name": "eclipse",
+    "maintainer": "phillipe.morat@imag.fr",
+    "architecture": "all",
+    "major": "RICM3",
+    "class": "AOO",
+    "description": "Java IDE",
+    "dependencies": "java",
+    "versions": [
+      "4",
+      "5",
+      "6"
+    ],
+    "createdAt": "2017-02-16T10:32:36.558Z",
+    "updatedAt": "2017-02-16T10:32:36.558Z",
+    "id": "4ac26132d5ef125de13bac35"
+  },
+  {
+    "builds": [],
+    "messages": [],
+    "user": {
+      "username": "vdanjean",
+      "lastname": "DANJEAN",
+      "firstname": "Vincent",
+      "email": "vincent.danjean@imag.fr",
+      "userlevel": 2,
+      "createdAt": "2017-02-16T10:32:35.423Z",
+      "updatedAt": "2017-02-16T10:32:35.423Z",
+      "id": "58a42055d5ef19d5f69cd3fb"
+    },
+    "name": "lustre",
+    "maintainer": "vincent.danjean@imag.fr",
+    "architecture": "all",
+    "major": "RICM3",
+    "class": "ALM2",
+    "description": "lustre",
+    "dependencies": "gcc python",
+    "versions": [
+      "2"
+    ],
+    "createdAt": "2017-02-16T10:32:36.561Z",
+    "updatedAt": "2017-02-16T10:32:36.561Z",
+    "id": "4ac26132d5ef125de13bac36"
   }
 ]
+

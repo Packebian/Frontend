@@ -8,6 +8,7 @@
 var packages;
 
 $.getJSON('../../json/packages.json', function(data) {
+	/*
 	var jsonFormate = '[';
 	for (var d in data) {
 		jsonFormate += '{';
@@ -21,6 +22,8 @@ $.getJSON('../../json/packages.json', function(data) {
 	}
 	jsonFormate += ']';
 	packages = JSON.parse(jsonFormate);
+	*/
+	packages = data;
 });
 
 
