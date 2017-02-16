@@ -34,6 +34,11 @@ angular
 				controller: 'SearchCtrl',
 				controllerAs: 'search'
 			})
+			.when('/tickets', {
+				templateUrl: 'views/tickets.html',
+				controller: 'TicketsCtrl',
+				controllerAs: 'tickets'
+			})
 			.when('/contribution', {
 				templateUrl: 'views/contribution.html',
 				controller: 'ContributionCtrl',

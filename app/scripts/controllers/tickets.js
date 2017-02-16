@@ -1,13 +1,13 @@
 /* 
-		Created on : 7 févr. 2017, 09:58:32
-		Author		 : Germain Lecorps and Régis Ramel
+		Created on	: 16 févr. 2017, 09:58:32
+		Author		: Germain Lecorps and Régis Ramel
 */
 
 'use strict';
 
-var packages;
+var tickets;
 
-$.getJSON('../../json/packages.json', function(data) {
+$.getJSON('../../json/tickets.json', function(data) {
 	var jsonFormate = '[';
 	for (var d in data) {
 		jsonFormate += '{';
@@ -32,8 +32,8 @@ $.getJSON('../../json/packages.json', function(data) {
  * Controller of the frontendApp
  */
 angular.module('frontendApp')
-	.controller('SearchCtrl', function ($scope) {
-		$scope.packages = packages;
+	.controller('TicketsCtrl', function ($scope) {
+		$scope.tickets = tickets;
 	this.awesomeThings = [
 		'HTML5 Boilerplate',
 		'AngularJS',
@@ -45,7 +45,7 @@ angular.module('frontendApp')
 		$scope.filtre = "$";
 		$scope.search = {name:'', class:'', $:''};
 	$scope.changeFilterTo = function(pr) {
-		$scope.filtre = pr;
+		$scope.filtre = pr; 
 	};
 	$scope.setSearchFilter = function()
 	{

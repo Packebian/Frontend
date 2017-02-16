@@ -3,35 +3,26 @@
 		Author		 : Germain Lecorps and Régis Ramel
 -->
 
-
-<h1>Liste des packages</h1>
+<h1>Liste des Packages</h1>
 <div ng-controller="SearchCtrl">
 	<div class = "tableBfont">
 		<div class = "wrapperB">
 			<input ng-model ="userQuery" ng-change="setSearchFilter()" type="text" placeholder="Rechercher..." />
-		        <select ng-model="searchOn" ng-change="setSearchFilter()">
-		            <option value="name">Nom</option>
-		            <option value="class">Class</option>
-		            <option value="major">Major</option>
-		            <option value="maintainer">Main</option>
-		        </select><br><br>
-<!--
-              <label>Filtre</label> <input type="text" ng-model="search[filtre]"> by {{filtre}} <br>
-			      <ul>
-			      <li><a href="" ng-click="changeFilterTo('$')">Any</a></li>
-			      <li><a href="" ng-click="changeFilterTo('name')">By Name</a></li>
-			      <li><a href="" ng-click="changeFilterTo('class')">By phone</a></li>
-			      </ul>
--->
+			<select ng-model="searchOn" ng-change="setSearchFilter()">
+				<option value="name">Nom</option>
+				<option value="class">Class</option>
+				<option value="major">Major</option>
+				<option value="maintainer">Main</option>
+			</select>
+			<br><br>
 			<table class = "tableB" border="1" width="100%">
 				<tr class = "rowB headerB blue" >
 					<th style = "text-align: center" ng-click="orderByMe('name')">Nom</th>
 					<th style = "text-align: center" ng-click="orderByMe('maintainer')">Maintainer</th>
 					<th style = "text-align: center" ng-click="orderByMe('major')">Filière</th>
 					<th style = "text-align: center" ng-click="orderByMe('class')">Matière</th>
-
 				</tr>
-				<tr class = "rowB" ng-repeat="package in packages | filter: searchFilter | orderBy: order ">
+				<tr class = "rowB" ng-repeat="package in packages | filter: searchFilter | orderBy: order">
 				<td class ="cellB">{{package.name}}</td>
 				<td class ="cellB">{{package.maintainer}}</td>
 				<td class ="cellB">{{package.major}}</td>
@@ -51,5 +42,3 @@
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="bower_components/angular-touch/angular-touch.js"></script>
-<script src="../scripts/controllers/search.js"></script>
-
