@@ -35,6 +35,7 @@
 							<li id = "searchButton">
 								<a href="/#!/search" onclick="	document.getElementById('searchButton').className = 'current-page visible';
 																document.getElementById('ticketsButton').className = 'visible';
+																document.getElementById('adminButton').className = 'visible';
 																document.getElementById('contribButton').className = 'visible';
 																document.getElementById('faqButton').className = 'visible';">
 									Liste des Packages
@@ -43,14 +44,25 @@
 							<li id = "ticketsButton">
 								<a href="/#!/tickets" onclick="	document.getElementById('searchButton').className = 'visible';
 																document.getElementById('ticketsButton').className = 'current-page visible';
+																document.getElementById('adminButton').className = 'visible';
 																document.getElementById('contribButton').className = 'visible';
 																document.getElementById('faqButton').className = 'visible';">
 									Liste des Tickets
 								</a>
 							</li>
+							<li id = "adminButton">
+								<a href="/#!/admin" onclick="	document.getElementById('searchButton').className = 'visible';
+																document.getElementById('ticketsButton').className = 'visible';
+																document.getElementById('adminButton').className = 'current-page visible';
+																document.getElementById('contribButton').className = 'visible';
+																document.getElementById('faqButton').className = 'visible';">
+									Administration
+								</a>
+							</li>
 							<li id = "contribButton">
 								<a ng-href="/#!/contribution" onclick="	document.getElementById('searchButton').className = 'visible';
 																		document.getElementById('ticketsButton').className = 'visible';
+																		document.getElementById('adminButton').className = 'visible';
 																		document.getElementById('contribButton').className = 'current-page visible';
 																		document.getElementById('faqButton').className = 'visible';">
 									Contribution
@@ -114,23 +126,24 @@
 		</script>
 
 		<!-- build:js(.) scripts/vendor.js -->
-		<!-- bower:js -->
-		<script src="bower_components/jquery/dist/jquery.js"></script>
-		<script src="bower_components/angular/angular.js"></script>
-		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-		<script src="bower_components/angular-animate/angular-animate.js"></script>
-		<script src="bower_components/angular-cookies/angular-cookies.js"></script>
-		<script src="bower_components/angular-resource/angular-resource.js"></script>
-		<script src="bower_components/angular-route/angular-route.js"></script>
-		<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-		<script src="bower_components/angular-touch/angular-touch.js"></script>
-		<!-- endbower -->
+			<!-- bower:js -->
+				<script src="bower_components/jquery/dist/jquery.js"></script>
+				<script src="bower_components/angular/angular.js"></script>
+				<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+				<script src="bower_components/angular-animate/angular-animate.js"></script>
+				<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+				<script src="bower_components/angular-resource/angular-resource.js"></script>
+				<script src="bower_components/angular-route/angular-route.js"></script>
+				<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+				<script src="bower_components/angular-touch/angular-touch.js"></script>
+			<!-- endbower -->
 		<!-- endbuild -->
 		<!-- build:js({.tmp,app}) scripts/scripts.js -->
 		<script src="scripts/app.js"></script>
 		<script src="scripts/controllers/login.js"></script>
 		<script src="scripts/controllers/search.js"></script>
 		<script src="scripts/controllers/tickets.js"></script>
+		<script src="scripts/controllers/admin.js"></script>
 		<script src="scripts/controllers/contribution.js"></script>
 		<script src="scripts/controllers/faq.js"></script>
 		<!-- endbuild -->

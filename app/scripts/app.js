@@ -39,6 +39,11 @@ angular
 				controller: 'TicketsCtrl',
 				controllerAs: 'tickets'
 			})
+			.when('/admin', {
+				templateUrl: 'views/admin.html',
+				controller: 'AdminCtrl',
+				controllerAs: 'admin'
+			})
 			.when('/contribution', {
 				templateUrl: 'views/contribution.html',
 				controller: 'ContributionCtrl',

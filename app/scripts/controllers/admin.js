@@ -29,13 +29,13 @@ $.getJSON('../../json/tickets.json', function(data) {
 
 /**
  * @ngdoc function
- * @name frontendApp.controller:TicketsCtrl
+ * @name frontendApp.controller:AdminCtrl
  * @description
- * # TicketsCtrl
+ * # AdminCtrl
  * Controller of the frontendApp
  */
 angular.module('frontendApp')
-	.controller('TicketsCtrl', function ($scope) {
+	.controller('AdminCtrl', function ($scope) {
 		$scope.tickets = tickets;
 	this.awesomeThings = [
 		'HTML5 Boilerplate',
