@@ -4,12 +4,6 @@
 -->
 
 <link rel="stylesheet" type="text/css" href="../styles/login.css">
-<script>
-	document.getElementById('searchButton').className = 'invisible';
-	document.getElementById('ticketsButton').className = 'invisible';
-	document.getElementById('contribButton').className = 'invisible';
-	document.getElementById('faqButton').className = 'invisible';
-</script>
 <header class="login_header">
 	Login
 </header>
@@ -32,25 +26,3 @@
 		</button>
 	</div>
 </form>
-<script>
-	function login() {
-		var bypass = true;
-		if(!bypass) {
-			var username = document.getElementById('username').value;
-			var password = document.getElementById('password').value;
-		}
-		else {
-			var username = "laRoulade";
-			var password = "RAVH";
-		}
-		if(username === "laRoulade" & password === "RAVH") {
-			document.getElementById('searchButton').className = '';
-			document.getElementById('ticketsButton').className = '';
-			document.getElementById('contribButton').className = '';
-			document.getElementById('faqButton').className = '';
-		}
-		else {
-			document.getElementById("form").innerHTML += "Échec d'authentification";
-		}
-	}
-</script>

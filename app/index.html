@@ -31,39 +31,8 @@
 						<a class="navbar-brand">Gestionnaire de packages - Polytech Grenoble</a>
 					</div>
 					<div class="collapse navbar-collapse" id="js-navbar-collapse">
-						<ul class="nav navbar-nav pull-right">
-							<li id = "searchButton">
-								<a href="/#!/search" onclick="	document.getElementById('searchButton').className = 'current-page visible';
-																document.getElementById('ticketsButton').className = 'visible';
-																document.getElementById('contribButton').className = 'visible';
-																document.getElementById('faqButton').className = 'visible';">
-									Liste des Packages
-								</a>
-							</li>
-							<li id = "ticketsButton">
-								<a href="/#!/tickets" onclick="	document.getElementById('searchButton').className = 'visible';
-																document.getElementById('ticketsButton').className = 'current-page visible';
-																document.getElementById('contribButton').className = 'visible';
-																document.getElementById('faqButton').className = 'visible';">
-									Liste des Tickets
-								</a>
-							</li>
-							<li id = "contribButton">
-								<a ng-href="/#!/contribution" onclick="	document.getElementById('searchButton').className = 'visible';
-																		document.getElementById('ticketsButton').className = 'visible';
-																		document.getElementById('contribButton').className = 'current-page visible';
-																		document.getElementById('faqButton').className = 'visible';">
-									Contribution
-								</a>
-							</li>
-							<li id = "faqButton">
-								<a ng-href="/#!/faq" onclick="	document.getElementById('searchButton').className = 'visible';
-																document.getElementById('ticketsButton').className = 'visible';
-																document.getElementById('contribButton').className = 'visible';
-																document.getElementById('faqButton').className = 'current-page visible';">
-									FAQ / Tutoriels
-								</a>
-							</li>
+						<ul id="navbarPages" class="nav navbar-nav pull-right">
+							
 						</ul>
 					</div>
 				</div>
@@ -114,17 +83,17 @@
 		</script>
 
 		<!-- build:js(.) scripts/vendor.js -->
-			<!-- bower:js -->
-			<script src="bower_components/jquery/dist/jquery.js"></script>
-			<script src="bower_components/angular/angular.js"></script>
-			<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-			<script src="bower_components/angular-animate/angular-animate.js"></script>
-			<script src="bower_components/angular-cookies/angular-cookies.js"></script>
-			<script src="bower_components/angular-resource/angular-resource.js"></script>
-			<script src="bower_components/angular-route/angular-route.js"></script>
-			<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-			<script src="bower_components/angular-touch/angular-touch.js"></script>
-			<!-- endbower -->
+		<!-- bower:js -->
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="bower_components/angular-animate/angular-animate.js"></script>
+		<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+		<script src="bower_components/angular-resource/angular-resource.js"></script>
+		<script src="bower_components/angular-route/angular-route.js"></script>
+		<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+		<script src="bower_components/angular-touch/angular-touch.js"></script>
+		<!-- endbower -->
 		<!-- endbuild -->
 		<!-- build:js({.tmp,app}) scripts/scripts.js -->
 		<script src="scripts/app.js"></script>

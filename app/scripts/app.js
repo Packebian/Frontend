@@ -53,3 +53,11 @@ angular
 				redirectTo: '/'
 			});
 	});
+
+function currentPage(page) {
+	document.getElementById('searchButton').className = '';
+	document.getElementById('ticketsButton').className = '';
+	document.getElementById('contribButton').className = '';
+	document.getElementById('faqButton').className = '';
+	document.getElementById(page).className = 'current-page';
+}
