@@ -61,3 +61,12 @@ function currentPage(page) {
 	document.getElementById('faqButton').className = '';
 	document.getElementById(page).className = 'current-page';
 }
+
+function isAdmin(user) {
+	if(user === "laRoulade") {
+		return true;
+	}
+	else {
+		return false;
+	}
+}

@@ -22,22 +22,23 @@ angular.module('frontendApp')
 	});
 
 function login() {
-		var bypass = true;
-		if(!bypass) {
-			var username = document.getElementById('username').value;
-			var password = document.getElementById('password').value;
-		}
-		else {
-			var username = "laRoulade";
-			var password = "RAVH";
-		}
-		if(username === "laRoulade" & password === "RAVH") {
-			displayNavBar();
-		}
-		else {
-			document.getElementById("form").innerHTML += "Échec d'authentification";
-		}
+	var bypass = true;
+	if(!bypass) {
+		var username = document.getElementById('username').value;
+		var password = document.getElementById('password').value;
 	}
+	else {
+		var username = "laRoulade";
+		var password = "RAVH";
+	}
+
+	if(password === "RAVH") {
+		displayNavBar();
+	}
+	else {
+		document.getElementById("form").innerHTML += "Échec d'authentification";
+	}
+}
 
 function displayNavBar() {
 	var html	 = '<li id = "searchButton"><a href="/#!/search" onclick="currentPage(' + "'" + 'searchButton' + "'" + ');">Liste des Packages</a></li>';
