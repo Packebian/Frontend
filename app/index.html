@@ -35,7 +35,6 @@
 							<li id = "searchButton">
 								<a href="/#!/search" onclick="	document.getElementById('searchButton').className = 'current-page visible';
 																document.getElementById('ticketsButton').className = 'visible';
-																document.getElementById('adminButton').className = 'visible';
 																document.getElementById('contribButton').className = 'visible';
 																document.getElementById('faqButton').className = 'visible';">
 									Liste des Packages
@@ -44,25 +43,14 @@
 							<li id = "ticketsButton">
 								<a href="/#!/tickets" onclick="	document.getElementById('searchButton').className = 'visible';
 																document.getElementById('ticketsButton').className = 'current-page visible';
-																document.getElementById('adminButton').className = 'visible';
 																document.getElementById('contribButton').className = 'visible';
 																document.getElementById('faqButton').className = 'visible';">
 									Liste des Tickets
 								</a>
 							</li>
-							<li id = "adminButton">
-								<a href="/#!/admin" onclick="	document.getElementById('searchButton').className = 'visible';
-																document.getElementById('ticketsButton').className = 'visible';
-																document.getElementById('adminButton').className = 'current-page visible';
-																document.getElementById('contribButton').className = 'visible';
-																document.getElementById('faqButton').className = 'visible';">
-									Administration
-								</a>
-							</li>
 							<li id = "contribButton">
 								<a ng-href="/#!/contribution" onclick="	document.getElementById('searchButton').className = 'visible';
 																		document.getElementById('ticketsButton').className = 'visible';
-																		document.getElementById('adminButton').className = 'visible';
 																		document.getElementById('contribButton').className = 'current-page visible';
 																		document.getElementById('faqButton').className = 'visible';">
 									Contribution
@@ -143,7 +131,6 @@
 		<script src="scripts/controllers/login.js"></script>
 		<script src="scripts/controllers/search.js"></script>
 		<script src="scripts/controllers/tickets.js"></script>
-		<script src="scripts/controllers/admin.js"></script>
 		<script src="scripts/controllers/contribution.js"></script>
 		<script src="scripts/controllers/faq.js"></script>
 		<!-- endbuild -->
