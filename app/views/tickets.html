@@ -22,7 +22,7 @@
 					<th style = "text-align: center" ng-click="orderByMe('maintainer')">Maintainer</th>
 					<th style = "text-align: center" ng-click="orderByMe('major')">Filière</th>
 					<th style = "text-align: center" ng-click="orderByMe('class')">Matière</th>
-					<th style = "text-align: center" ng-click="orderByMe('vote')"> Nombre de votes</th>
+					<th style = "text-align: center" ng-click="orderByMe('votes.length')"> Nombre de votes</th>
 					<th style = "text-align: center" ng-click="orderByMe('vote')">Voter</th>
 				</tr>
 				<tr id="rows" class = "rowB" ng-repeat="ticket in tickets | filter: searchFilter | orderBy: order">
