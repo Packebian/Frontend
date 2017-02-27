@@ -26,6 +26,14 @@ $.getJSON('../../json/tickets.json', function(data) {
 	tickets = data;
 });
 
+function displayValidation() {
+	if (isAdmin()) {
+		var titles = '<th style = "text-align: center" ng-click="orderByMe(' + "'" + 'vote' + "'" + ')">Validation</th>';
+		var rows = '<td class ="cellB"><input type="button" value="Valider"></td>';
+		document.getElementById("rowTitles").innerHTML += titles;
+		document.getElementById("rows").innerHTML += rows;
+	}
+}
 
 /**
  * @ngdoc function
@@ -57,3 +65,6 @@ angular.module('frontendApp')
 	};
 });
 
+function isAdmin() {
+	return true;
+}
