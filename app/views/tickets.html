@@ -24,8 +24,10 @@
 					<th style = "text-align: center" ng-click="orderByMe('class')">Matière</th>
 					<th style = "text-align: center" ng-click="orderByMe('vote')"> Nombre de votes</th>
 					<th style = "text-align: center" ng-click="orderByMe('vote')">Voter</th>
+					<th style = "text-align: center" ng-click="orderByMe('vote')">Validation</th>
+
 				</tr>
-					<tr class = "rowB" ng-repeat="ticket in tickets | filter: searchFilter | orderBy: order">
+				<tr class = "rowB" ng-repeat="ticket in tickets | filter: searchFilter | orderBy: order">
 					<td class ="cellB">{{ticket.name}}</td>
 					<td class ="cellB">{{ticket.maintainer}}</td>
 					<td class ="cellB">{{ticket.major}}</td>
@@ -33,6 +35,9 @@
 					<td class ="cellB">{{ticket.votes.length}}</td>
 					<td class ="cellB">
 						<input type="button" value="Voter">
+					</td>
+					<td class ="cellB">
+						<input type="button" value="Valider">
 					</td>
 				</tr>
 			</table>
