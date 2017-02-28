@@ -5,27 +5,6 @@
 
 'use strict';
 
-var tickets;
-
-$.getJSON('../../json/tickets.json', function(data) {
-	/*
-	var jsonFormate = '[';
-	for (var d in data) {
-		jsonFormate += '{';
-		jsonFormate += '"name" : "' + (data[d].infos.name) + '",';
-		jsonFormate += '"class" : "' + (data[d].infos.class) + '",';
-		jsonFormate += '"major" : "' + (data[d].infos.major) + '",';
-		jsonFormate += '"maintainer" : "' + (data[d].infos.maintainer) + '"}';
-		if (d != data.length - 1) {
-			jsonFormate += ',';
-		}
-	}
-	jsonFormate += ']';
-	tickets = JSON.parse(jsonFormate);
-	*/
-	tickets = data;
-});
-
 /**
  * @ngdoc function
  * @name frontendApp.controller:TicketsCtrl
@@ -34,26 +13,20 @@ $.getJSON('../../json/tickets.json', function(data) {
  * Controller of the frontendApp
  */
 angular.module('frontendApp')
-	.controller('TicketsCtrl', function ($scope) {
-		$scope.tickets = tickets;
-	this.awesomeThings = [
-		'HTML5 Boilerplate',
-		'AngularJS',
-		'Karma'
-	];
+	.controller('TicketsCtrl', function ($scope, $http) {
 	$scope.orderByMe = function(x) {
 		$scope.order = x;
 	};
-		$scope.filtre = "$";
-		$scope.search = {name:'', class:'', $:''};
+	$scope.filtre = "$";
+	$scope.search = {name:'', class:'', $:''};
 	$scope.changeFilterTo = function(pr) {
-		$scope.filtre = pr; 
+		$scope.filtre = pr;
 	};
-	$scope.setSearchFilter = function()
-	{
+	$scope.setSearchFilter = function() {
 		$scope.searchFilter = {};
 		$scope.searchFilter[$scope.searchOn] = $scope.userQuery;
 	};
+	$scope.tickets = tickets;
 });
 
 function displayValidation() {
@@ -64,3 +37,9 @@ function displayValidation() {
 		document.getElementById("rows").innerHTML += rows;
 	}
 }
+
+var tickets;
+
+$.getJSON('http://192.168.56.1:1338/tickets', function(data) {
+	tickets = data;
+});

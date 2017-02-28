@@ -8,21 +8,6 @@
 var packages;
 
 $.getJSON('../../json/packages.json', function(data) {
-	/*
-	var jsonFormate = '[';
-	for (var d in data) {
-		jsonFormate += '{';
-		jsonFormate += '"name" : "' + (data[d].infos.name) + '",';
-		jsonFormate += '"class" : "' + (data[d].infos.class) + '",';
-		jsonFormate += '"major" : "' + (data[d].infos.major) + '",';
-		jsonFormate += '"maintainer" : "' + (data[d].infos.maintainer) + '"}';
-		if (d != data.length - 1) {
-			jsonFormate += ',';
-		}
-	}
-	jsonFormate += ']';
-	packages = JSON.parse(jsonFormate);
-	*/
 	packages = data;
 });
 

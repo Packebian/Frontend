@@ -1,6 +1,6 @@
 /* 
-    Created on : 7 févr. 2017, 09:58:32
-    Author     : Germain Lecorps and Régis Ramel
+		Created on : 7 févr. 2017, 09:58:32
+		Author		 : Germain Lecorps and Régis Ramel
 */
 
 'use strict';
@@ -13,7 +13,7 @@
  *
  * Main module of the application.
  */
-angular
+var frontenApp = angular
 	.module('frontendApp', [
 		'ngAnimate',
 		'ngCookies',
@@ -22,7 +22,8 @@ angular
 		'ngSanitize',
 		'ngTouch'
 	])
-	.config(function ($routeProvider) {
+	.config(function ($routeProvider, $httpProvider) {
+		$httpProvider.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 		$routeProvider
 			.when('/', {
 				templateUrl: 'views/login.html',
@@ -53,6 +54,29 @@ angular
 				redirectTo: '/'
 			});
 	});
+	
+	
+
+var apiAddress = "192.168.56.1:1338";
+
+frontenApp.factory('apiAddresses', function() {
+	return {
+		apiAddress : "192.168.56.1:1338",
+		apiUsers : apiAddress + "/users",
+		apiTikets : apiAddress + "/tickets",
+		apiVotes : apiAddress + "/votes",
+		apiPackages : apiAddress + "/packages",
+		apiBuilds : apiAddress + "/builds",
+		apiMesscages : apiAddress + "/messages"
+	};
+});
+
+var apiUsers = apiAddress + "/users";
+var apiTickets = apiAddress + "/tickets";
+var apiVotes = apiAddress + "/votes";
+var apiPackages = apiAddress + "/packages";
+var apiBuilds = apiAddress + "/builds";
+var apiMessages = apiAddress + "/messages";
 
 function currentPage(page) {
 	document.getElementById('searchButton').className = '';
