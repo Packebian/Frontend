@@ -5,6 +5,8 @@
 
 'use strict';
 
+var apiAddress = "http://192.168.56.1:1338";
+
 /**
  * @ngdoc overview
  * @name frontendApp
@@ -13,7 +15,7 @@
  *
  * Main module of the application.
  */
-var frontenApp = angular
+var frontendApp = angular
 	.module('frontendApp', [
 		'ngAnimate',
 		'ngCookies',
@@ -23,7 +25,7 @@ var frontenApp = angular
 		'ngTouch'
 	])
 	.config(function ($routeProvider, $httpProvider) {
-		$httpProvider.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+		//$httpProvider.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 		$routeProvider
 			.when('/', {
 				templateUrl: 'views/login.html',
@@ -54,12 +56,9 @@ var frontenApp = angular
 				redirectTo: '/'
 			});
 	});
-	
-	
 
-var apiAddress = "192.168.56.1:1338";
-
-frontenApp.factory('apiAddresses', function() {
+/*
+frontendApp.factory('apiAddresses', function() {
 	return {
 		apiAddress : "192.168.56.1:1338",
 		apiUsers : apiAddress + "/users",
@@ -69,14 +68,7 @@ frontenApp.factory('apiAddresses', function() {
 		apiBuilds : apiAddress + "/builds",
 		apiMesscages : apiAddress + "/messages"
 	};
-});
-
-var apiUsers = apiAddress + "/users";
-var apiTickets = apiAddress + "/tickets";
-var apiVotes = apiAddress + "/votes";
-var apiPackages = apiAddress + "/packages";
-var apiBuilds = apiAddress + "/builds";
-var apiMessages = apiAddress + "/messages";
+});*/
 
 function currentPage(page) {
 	document.getElementById('searchButton').className = '';
@@ -93,4 +85,8 @@ function isAdmin(user) {
 	else {
 		return false;
 	}
+}
+
+function getApiAddress(target) {
+	return apiAddress + target;
 }

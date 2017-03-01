@@ -13,13 +13,7 @@
  * Controller of the frontendApp
  */
 angular.module('frontendApp')
-	.controller('FaqCtrl', function () {
-		this.awesomeThings = [
-			'HTML5 Boilerplate',
-			'AngularJS',
-			'Karma'
-		];
-	});
+	.controller('FaqCtrl', function () {});
 
 function displayTutos() {
 	$.getJSON("../json/tutos.json", function(tutos){

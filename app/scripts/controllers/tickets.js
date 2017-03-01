@@ -40,6 +40,6 @@ function displayValidation() {
 
 var tickets;
 
-$.getJSON('http://192.168.56.1:1338/tickets', function(data) {
+$.getJSON(getApiAddress('/tickets'), function(data) {
 	tickets = data;
 });
