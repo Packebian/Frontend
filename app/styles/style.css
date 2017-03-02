@@ -104,7 +104,7 @@ strong {
 
 .slider {
 	margin: 0 auto;
-	background: #f8f8f8 url(../img/pattern.jpg) left top repeat;
+	/*background: #f8f8f8 url(../img/pattern.jpg) left top repeat;*/
 	-moz-box-shadow:
 		0 5px 15px 0 rgba(0,0,0,.05) inset,
 		0 -5px 15px 0 rgba(0,0,0,.05) inset;
@@ -420,7 +420,7 @@ strong {
 footer {
 	margin: 0 auto;
 	padding-bottom: 10px;
-	background: #f8f8f8 url(../img/pattern.jpg) left top repeat;
+	/*background: #f8f8f8 url(../img/pattern.jpg) left top repeat;*/
 	-moz-box-shadow: 0 5px 15px 0 rgba(0,0,0,.05) inset;
 	-webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,.05) inset;
 	box-shadow: 0 5px 15px 0 rgba(0,0,0,.05) inset;
@@ -542,7 +542,7 @@ footer .social a:hover { background-position: left top; }
 .page-title {
 	margin: 0 auto;
 	padding: 30px 0 35px 0;
-	background: #f8f8f8 url(../img/pattern.jpg) left top repeat;
+	/*background: #f8f8f8 url(../img/pattern.jpg) left top repeat;*/
 	-moz-box-shadow:
 		0 5px 15px 0 rgba(0,0,0,.05) inset,
 		0 -5px 15px 0 rgba(0,0,0,.05) inset;

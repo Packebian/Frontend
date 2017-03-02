@@ -7,22 +7,24 @@
 <header class="login_header">
 	Login
 </header>
-<form id="form" name="form" role="form">
-	<div class="login_form">
-		<label class="login_label" for="username">
-			Username
-		</label>
-		<input type="text" name="username" id="username" class="login_input">
-	</div>
-	<div class="login_form">
-		<label class="login_label" for="password">
-			Password
-		</label>
-		<input type="password" name="password" id="password" class="login_input">
-	</div>
-	<div class="login_actions">
-		<button type="submit" class="btn" onclick="login()">
-			Login
-		</button>
-	</div>
-</form>
+<div ng-controller="ControllerMain">
+	<form id="form" name="form" role="form">
+		<div class="login_form">
+			<label class="login_label" for="username">
+				Username
+			</label>
+			<input type="text" name="username" id="username" class="login_input">
+		</div>
+		<div class="login_form">
+			<label class="login_label" for="password">
+				Password
+			</label>
+			<input type="password" name="password" id="password" class="login_input">
+		</div>
+		<div class="login_actions">
+			<button type="submit" class="btn" ng-click="login()">
+				Login
+			</button>
+		</div>
+	</form>
+</div>

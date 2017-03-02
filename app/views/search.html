@@ -24,10 +24,10 @@
 					<th style = "text-align: center" ng-click="orderByMe('class')">Matière</th>
 				</tr>
 				<tr class = "rowB" ng-repeat="package in packages | filter: searchFilter | orderBy: order">
-				<td class ="cellB">{{package.name}}</td>
-				<td class ="cellB">{{package.maintainer}}</td>
-				<td class ="cellB">{{package.major}}</td>
-				<td class ="cellB">{{package.class}}</td>
+					<td class ="cellB">{{package.name}}</td>
+					<td class ="cellB">{{package.maintainer}}</td>
+					<td class ="cellB">{{package.major}}</td>
+					<td class ="cellB">{{package.class}}</td>
 				</tr>
 			</table>
 		</div>
