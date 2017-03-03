@@ -31,8 +31,11 @@
 						<a class="navbar-brand">Gestionnaire de packages - Polytech Grenoble</a>
 					</div>
 					<div class="collapse navbar-collapse" id="js-navbar-collapse">
-						<ul id="navbarPages" class="nav navbar-nav pull-right">
-							
+						<ul id="navbarPages" class="nav navbar-nav pull-right" ng-show="displayNav">
+							<li id = "searchButton"><a href="/#!/search" ng-click="currentPage('searchButton');">Liste des Packages</a></li>
+							<li id = "ticketsButton"><a href="/#!/tickets" ng-click="currentPage('ticketsButton');">Liste des Tickets</a></li>
+							<li id = "contribButton"><a href="/#!/contribution" ng-click="currentPage('contribButton');">Contribution</a></li>
+							<li id = "faqButton"><a href="/#!/faq" ng-click="currentPage('faqButton');">FAQ / Tutoriels</a></li>
 						</ul>
 					</div>
 				</div>

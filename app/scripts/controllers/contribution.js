@@ -8,9 +8,12 @@
 /**
  * @ngdoc function
  * @name frontendApp.controller:ContributionCtrl
+ * @argument $scope 
  * @description
  * # ContributionCtrl
  * Controller of the frontendApp
  */
 angular.module('frontendApp')
-	.controller('ContributionCtrl', function () {});
+	.controller('ContributionCtrl', function ($scope) {
+		$scope.currentPage('contribButton');
+	});

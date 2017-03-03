@@ -3,11 +3,12 @@
 		Author		: Germain Lecorps and Régis Ramel
 -->
 
+<script src="scripts/controllers/tickets.js"></script>
 <h1>Liste des Tickets</h1>
 <div ng-controller="TicketsCtrl">
-	<div class = "tableBfont">
-		<div class = "wrapperB">
-			<input ng-model ="userQuery" ng-change="setSearchFilter()" type="text" placeholder="Rechercher..." />
+	<div class="tableBfont">
+		<div class="wrapperB">
+			<input ng-model="userQuery" ng-change="setSearchFilter()" type="text" placeholder="Rechercher..." />
 			<select ng-model="searchOn" ng-change="setSearchFilter()">
 				<option value="$">Any</option>
 				<option value="name">Nom</option>
@@ -16,25 +17,29 @@
 				<option value="maintainer">Maintainer</option>
 			</select>
 			<br><br>
-			<table class = "tableB" border="1" width="100%">
-				<tr id="rowTitles" class = "rowB headerB blue" >
-					<th style = "text-align: center" ng-click="orderByMe('name')">Nom</th>
-					<th style = "text-align: center" ng-click="orderByMe('maintainer')">Maintainer</th>
-					<th style = "text-align: center" ng-click="orderByMe('major')">Filière</th>
-					<th style = "text-align: center" ng-click="orderByMe('class')">Matière</th>
-					<!--<th style = "text-align: center" ng-click="orderByMe('class')">Nombre de votes</th>
-					<th style = "text-align: center" ng-click="orderByMe('class')">Voter</th>-->
+			<table class="tableB" border="1" width="100%">
+				<tr id="rowTitles" class="rowB headerB blue" >
+					<th style="text-align: center" ng-click="orderByMe('name')">Nom</th>
+					<th style="text-align: center" ng-click="orderByMe('maintainer')">Maintainer</th>
+					<th style="text-align: center" ng-click="orderByMe('major')">Filière</th>
+					<th style="text-align: center" ng-click="orderByMe('class')">Matière</th>
+					<th style="text-align: center" ng-click="orderByMe('class')">Nombre de votes</th>
+					<th style="text-align: center">Voter</th>
+					<th style="text-align: center" ng-show="displayVal">Validation</th>
 				</tr>
-				<tr id="rows" class = "rowB" ng-repeat="ticket in tickets">
-					<td class ="cellB">{{ticket.name}}</td>
-					<td class ="cellB">{{ticket.maintainer}}</td>
-					<td class ="cellB">{{ticket.major}}</td>
-					<td class ="cellB">{{ticket.class}}</td>
-					<!--<td class ="cellB">{{ticket.results.upvotes - ticket.results.downvotes}}</td>
-					<td class ="cellB">
+				<tr id="rows" class="rowB" ng-repeat="ticket in tickets | filter: searchFilter | orderBy: order">
+					<td class="cellB">{{ticket.name}}</td>
+					<td class="cellB">{{ticket.maintainer}}</td>
+					<td class="cellB">{{ticket.major}}</td>
+					<td class="cellB">{{ticket.class}}</td>
+					<td class="cellB">{{ticket.results.upvotes - ticket.results.downvotes}}</td>
+					<td class="cellB">
 						<input type="button" value="-">
 						<input type="button" value="+">
-					</td>-->
+					</td>
+					<td class="cellB" ng-show="displayVal">
+						<input type="button" value="Valider">
+					</td>
 				</tr>
 			</table>
 		</div>

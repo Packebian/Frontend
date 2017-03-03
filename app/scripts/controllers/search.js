@@ -8,6 +8,7 @@
 /**
  * @ngdoc function
  * @name frontendApp.controller:SearchCtrl
+ * @argument $scope
  * @description
  * # SearchCtrl
  * Controller of the frontendApp

@@ -1,13 +1,13 @@
 <!-- 
-		Created on : 7 févr. 2017, 09:58:32
-		Author		 : Germain Lecorps and Régis Ramel
+		Created on	: 7 févr. 2017, 09:58:32
+		Author		: Germain Lecorps and Régis Ramel
 -->
 
 <h1>Liste des Packages</h1>
 <div ng-controller="SearchCtrl">
-	<div class = "tableBfont">
-		<div class = "wrapperB">
-			<input ng-model ="userQuery" ng-change="setSearchFilter()" type="text" placeholder="Rechercher..." />
+	<div class="tableBfont">
+		<div class="wrapperB">
+			<input ng-model="userQuery" ng-change="setSearchFilter()" type="text" placeholder="Rechercher..." />
 			<select ng-model="searchOn" ng-change="setSearchFilter()">
 				<option value="$">Any</option>
 				<option value="name">Nom</option>
@@ -16,18 +16,18 @@
 				<option value="maintainer">Responsable</option>
 			</select>
 			<br><br>
-			<table class = "tableB" border="1" width="100%">
-				<tr class = "rowB headerB blue" >
-					<th style = "text-align: center" ng-click="orderByMe('name')">Nom</th>
-					<th style = "text-align: center" ng-click="orderByMe('maintainer')">Responsable</th>
-					<th style = "text-align: center" ng-click="orderByMe('major')">Filière</th>
-					<th style = "text-align: center" ng-click="orderByMe('class')">Matière</th>
+			<table class="tableB" border="1" width="100%">
+				<tr class="rowB headerB blue" >
+					<th style="text-align: center" ng-click="orderByMe('name')">Nom</th>
+					<th style="text-align: center" ng-click="orderByMe('maintainer')">Responsable</th>
+					<th style="text-align: center" ng-click="orderByMe('major')">Filière</th>
+					<th style="text-align: center" ng-click="orderByMe('class')">Matière</th>
 				</tr>
-				<tr class = "rowB" ng-repeat="package in packages | filter: searchFilter | orderBy: order">
-					<td class ="cellB">{{package.name}}</td>
-					<td class ="cellB">{{package.maintainer}}</td>
-					<td class ="cellB">{{package.major}}</td>
-					<td class ="cellB">{{package.class}}</td>
+				<tr class="rowB" ng-repeat="package in packages | filter: searchFilter | orderBy: order">
+					<td class="cellB">{{package.name}}</td>
+					<td class="cellB">{{package.maintainer}}</td>
+					<td class="cellB">{{package.major}}</td>
+					<td class="cellB">{{package.class}}</td>
 				</tr>
 			</table>
 		</div>

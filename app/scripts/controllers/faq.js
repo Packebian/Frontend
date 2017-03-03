@@ -8,12 +8,14 @@
 /**
  * @ngdoc function
  * @name frontendApp.controller:FaqCtrl
+ * @argument $scope 
  * @description
  * # FaqCtrl
  * Controller of the frontendApp
  */
 angular.module('frontendApp')
 	.controller('FaqCtrl', function ($scope) {
+		$scope.currentPage('faqButton');
 		$scope.displayTutos();
 		$scope.displayFaq();
 	});

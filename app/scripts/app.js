@@ -1,6 +1,6 @@
 /* 
-		Created on : 7 févr. 2017, 09:58:32
-		Author		 : Germain Lecorps and Régis Ramel
+		Created on	: 7 févr. 2017, 09:58:32
+		Author		: Germain Lecorps and Régis Ramel
 */
 
 'use strict';
@@ -8,9 +8,9 @@
 /**
  * @ngdoc overview
  * @name frontendApp
+ * @argument $scope 
  * @description
  * # frontendApp
- *
  * Main module of the application.
  */
 var frontendApp = angular.module('frontendApp', [
@@ -29,6 +29,10 @@ frontendApp
 	$scope.getApiAddress = function(target) {
 		return apiAddress + target;
 	};
+	
+	/*Variables d'affichage*/
+	$scope.displayNav = false;
+	$scope.displayVal = false;
 	
 	/*Récupération des packages*/
 	$scope.packages = [];
@@ -60,34 +64,28 @@ frontendApp
 		$scope.searchFilter[$scope.searchOn] = $scope.userQuery;
 	};
 	
-	/*Affichage des boutons dans la navbar*/
-	$scope.displayNavBar = function() {
-		var html	 = '<li id = "searchButton"><a href="/#!/search" ng-click="currentPage(' + '\'' + 'searchButton' + '\'' + ');">Liste des Packages</a></li>';
-		html		+= '<li id = "ticketsButton"><a href="/#!/tickets" ng-click="currentPage('+ '\'' + 'ticketsButton' + '\'' + ');">Liste des Tickets</a></li>';
-		html		+= '<li id = "contribButton"><a href="/#!/contribution" ng-click="currentPage(' + '\'' + 'contribButton' + '\'' + ');">Contribution</a></li>';
-		html		+= '<li id = "faqButton"><a href="/#!/faq" ng-click="currentPage(' + '\'' + 'faqButton' + '\'' + ');">FAQ / Tutoriels</a></li>';
-		document.getElementById('navbarPages').innerHTML = html;
-	};
-	
 	/*Fonction de login*/
 	$scope.login = function() {
-		var bypass = true;
-		var username;
-		var password;
+		var bypass = false;
+		$scope.username = '';
+		$scope.password = '';
 		if(!bypass) {
-			username = document.getElementById('username').value;
-			password = document.getElementById('password').value;
+			$scope.username = document.getElementById('username').value;
+			$scope.password = document.getElementById('password').value;
 		}
 		else {
-			username = 'laRoulade';
-			password = 'RAVH';
+			$scope.username = 'laRoulade';
+			$scope.password = 'RAVH';
 		}
 
-		if(password === 'RAVH') {
-			$scope.displayNavBar();
+		if($scope.password == 'RAVH') {
+			$scope.$parent.$parent.displayNav = true;
 		}
 		else {
 			document.getElementById('form').innerHTML += 'Échec d\'authentification';
+		}
+		if($scope.username == 'laRoulade') {
+			$scope.$parent.$parent.displayVal = true;
 		}
 	};
 	
@@ -101,25 +99,16 @@ frontendApp
 		}
 	};
 	
-	/* Affichage de bouton "Valider"*/
-	$scope.displayValidation = function() {
-		
-		/*if ($scope.isAdmin(document.getElementById('username').value)) {
-			var titles = '<th style = "text-align: center" ng-click="orderByMe(' + '\'' + 'vote' + '\'' + ')">Validation</th>';
-			var rows = '<td class ="cellB"><input type="button" value="Valider"></td>';
-			document.getElementById('rowTitles').innerHTML += titles;
-			document.getElementById('rows').innerHTML += rows;
-		}*/
-	};
-	
 	/*Mise à jour de la page courrante*/
 	$scope.currentPage = function(page) {
-		console.log('currentPage :' + page + ' Connard !!');
-		document.getElementById('searchButton').className = '';
-		document.getElementById('ticketsButton').className = '';
-		document.getElementById('contribButton').className = '';
-		document.getElementById('faqButton').className = '';
-		document.getElementById(page).className = 'current-page';
+		console.log('titi');
+		if ($scope.display) {
+			document.getElementById('searchButton').className = '';
+			document.getElementById('ticketsButton').className = '';
+			document.getElementById('contribButton').className = '';
+			document.getElementById('faqButton').className = '';
+			document.getElementById(page).className = 'current-page';
+		}
 	};
 	
 	/*Affichage des Tutoriels*/
@@ -153,32 +142,31 @@ frontendApp
 	};
 })
 	.config(function ($routeProvider) {
-		//$httpProvider.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 		$routeProvider
 			.when('/', {
 				templateUrl: 'views/login.html',
-				controller: 'LoginCtrl',
-				controllerAs: 'login'
+				controller: 'LoginCtrl'
+				//controllerAs: 'login'
 			})
 			.when('/search', {
 				templateUrl: 'views/search.html',
-				controller: 'SearchCtrl',
-				controllerAs: 'search'
+				controller: 'SearchCtrl'
+				//controllerAs: 'search'
 			})
 			.when('/tickets', {
 				templateUrl: 'views/tickets.html',
-				controller: 'TicketsCtrl',
-				controllerAs: 'tickets'
+				controller: 'TicketsCtrl'
+				//controllerAs: 'tickets'
 			})
 			.when('/contribution', {
 				templateUrl: 'views/contribution.html',
-				controller: 'ContributionCtrl',
-				controllerAs: 'contribution'
+				controller: 'ContributionCtrl'
+				//controllerAs: 'contribution'
 			})
 			.when('/faq', {
 				templateUrl: 'views/faq.html',
-				controller: 'FaqCtrl',
-				controllerAs: 'faq'
+				controller: 'FaqCtrl'
+				//controllerAs: 'faq'
 			})
 			.otherwise({
 				redirectTo: '/'

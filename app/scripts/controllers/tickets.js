@@ -8,21 +8,10 @@
 /**
  * @ngdoc function
  * @name frontendApp.controller:TicketsCtrl
+ * @argument $scope 
  * @description
  * # TicketsCtrl
  * Controller of the frontendApp
  */
 angular.module('frontendApp')
 	.controller('TicketsCtrl', function () {});
-
-
-
-/*
-function upVote(user) {
-	console.log(user + ' : +');
-}
-
-function downVote(user) {
-	console.log(user + ' : -');
-}
-*/
