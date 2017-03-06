@@ -36,18 +36,20 @@ frontendApp
 	
 	/*Récupération des packages*/
 	$scope.packages = [];
-	$http.get('../json/packages.json').then(function(data) {
+	//$http.get('../json/packages.json').then(function(data) {
+	$http.get($scope.getApiAddress('/packages')).then(function(data) {
 		$scope.packages = data.data;
-	}, function(data) {
-		console.log(data);
+	}, function(error) {
+		console.log(error);
 	});
 	
 	/*Récupération des tickets*/
 	$scope.tickets = [];
-	$http.get('../json/tickets.json').then(function(data) {
+	//$http.get('../json/tickets.json').then(function(data) {
+	$http.get($scope.getApiAddress('/tickets')).then(function(data) {
 		$scope.tickets = data.data;
-	}, function(data) {
-		console.log(data);
+	}, function(error) {
+		console.log(error);
 	});
    
 	/*Critères de tri*/
@@ -66,7 +68,7 @@ frontendApp
 	
 	/*Fonction de login*/
 	$scope.login = function() {
-		var bypass = false;
+		var bypass = true;
 		$scope.username = '';
 		$scope.password = '';
 		if(!bypass) {
@@ -101,7 +103,6 @@ frontendApp
 	
 	/*Mise à jour de la page courrante*/
 	$scope.currentPage = function(page) {
-		console.log('titi');
 		if ($scope.display) {
 			document.getElementById('searchButton').className = '';
 			document.getElementById('ticketsButton').className = '';
