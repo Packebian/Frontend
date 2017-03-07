@@ -1,4 +1,4 @@
-/* 
+/*
 		Created on	: 7 févr. 2017, 09:58:32
 		Author		: Germain Lecorps and Régis Ramel
 */
@@ -8,7 +8,7 @@
 /**
  * @ngdoc overview
  * @name frontendApp
- * @argument $scope 
+ * @argument $scope
  * @description
  * # frontendApp
  * Main module of the application.
@@ -25,72 +25,14 @@ var frontendApp = angular.module('frontendApp', [
 frontendApp
 	.controller('ControllerMain', function ControllerMain($http, $scope) {
 	/*Adresse de l'API*/
-	var apiAddress = 'http://192.168.56.1:1338';
+	var apiAddress = 'http://192.168.99.100:1337';
 	$scope.getApiAddress = function(target) {
 		return apiAddress + target;
 	};
-	
-	/*Variables d'affichage*/
-	$scope.displayNav = false;
-	$scope.displayVal = false;
-	
-	/*Récupération des packages*/
-	$scope.packages = [];
-	//$http.get('../json/packages.json').then(function(data) {
-	$http.get($scope.getApiAddress('/packages')).then(function(data) {
-		$scope.packages = data.data;
-	}, function(error) {
-		console.log(error);
-	});
-	
-	/*Récupération des tickets*/
-	$scope.tickets = [];
-	//$http.get('../json/tickets.json').then(function(data) {
-	$http.get($scope.getApiAddress('/tickets')).then(function(data) {
-		$scope.tickets = data.data;
-	}, function(error) {
-		console.log(error);
-	});
-   
-	/*Critères de tri*/
-	$scope.orderByMe = function(x) {
-		$scope.order = x;
-	};
-	$scope.filtre = '$';
-	$scope.search = {name:'', class:'', $:''};
-	$scope.changeFilterTo = function(pr) {
-		$scope.filtre = pr;
-	};
-	$scope.setSearchFilter = function() {
-		$scope.searchFilter = {};
-		$scope.searchFilter[$scope.searchOn] = $scope.userQuery;
-	};
-	
-	/*Fonction de login*/
-	$scope.login = function() {
-		var bypass = true;
-		$scope.username = '';
-		$scope.password = '';
-		if(!bypass) {
-			$scope.username = document.getElementById('username').value;
-			$scope.password = document.getElementById('password').value;
-		}
-		else {
-			$scope.username = 'laRoulade';
-			$scope.password = 'RAVH';
-		}
 
-		if($scope.password == 'RAVH') {
-			$scope.$parent.$parent.displayNav = true;
-		}
-		else {
-			document.getElementById('form').innerHTML += 'Échec d\'authentification';
-		}
-		if($scope.username == 'laRoulade') {
-			$scope.$parent.$parent.displayVal = true;
-		}
-	};
-	
+	/*Variables d'affichage*/
+	$scope.displayVal = false;
+
 	/*Privilèges administrateur*/
 	$scope.isAdmin = function(user) {
 		if(user === 'laRoulade') {
@@ -100,7 +42,7 @@ frontendApp
 			return false;
 		}
 	};
-	
+
 	/*Mise à jour de la page courrante*/
 	$scope.currentPage = function(page) {
 		if ($scope.display) {
@@ -110,36 +52,6 @@ frontendApp
 			document.getElementById('faqButton').className = '';
 			document.getElementById(page).className = 'current-page';
 		}
-	};
-	
-	/*Affichage des Tutoriels*/
-	$scope.displayTutos = function() {
-		$http.get('../json/tutos.json').then(function(data) {
-			var tutos = data.data;
-			for(var i = 0; i < tutos.length; i++) {
-				var tutorial = '';
-				tutorial += '<h3>' + tutos[i].name + '</h3>';
-				tutorial += '<p>' + tutos[i].content + '</p>';
-				document.getElementById('tutorials').innerHTML += tutorial;
-			}
-		}, function Error(data) {
-			console.log(data);
-		});
-	};
-	
-	/*Affichage de la FAQ*/
-	$scope.displayFaq = function() {
-		$http.get('../json/faq.json').then(function(data) {
-			var faq = data.data;
-			for(var i = 0; i < faq.length; i++) {
-				var question = '';
-				question += '<h3>' + faq[i].question + '</h3>';
-				question += '<p>' + faq[i].answer + '</p>';
-				document.getElementById('faq').innerHTML += question;
-			}
-		}, function Error(data) {
-			console.log(data);
-		});
 	};
 })
 	.config(function ($routeProvider) {
