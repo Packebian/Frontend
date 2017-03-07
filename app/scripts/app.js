@@ -23,7 +23,7 @@ var frontendApp = angular.module('frontendApp', [
 	]);
 
 frontendApp
-	.controller('ControllerMain', function ControllerMain($http, $scope) {
+	.controller('ControllerMain', function ControllerMain($scope, $location, $http) {
 	/*Adresse de l'API*/
 	var apiAddress = 'http://192.168.99.100:1337';
 	$scope.getApiAddress = function(target) {
@@ -43,15 +43,9 @@ frontendApp
 		}
 	};
 
-	/*Mise à jour de la page courrante*/
-	$scope.currentPage = function(page) {
-		if ($scope.display) {
-			document.getElementById('searchButton').className = '';
-			document.getElementById('ticketsButton').className = '';
-			document.getElementById('contribButton').className = '';
-			document.getElementById('faqButton').className = '';
-			document.getElementById(page).className = 'current-page';
-		}
+	/*Correct page*/
+	$scope.currentPage = function(path) {
+		return ($location.path().substr(0, path.length) === path) ? 'current-page' : '';
 	};
 })
 	.config(function ($routeProvider) {

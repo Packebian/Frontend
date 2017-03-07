@@ -32,10 +32,10 @@
 					</div>
 					<div class="collapse navbar-collapse" id="js-navbar-collapse">
 						<ul id="navbarPages" class="nav navbar-nav pull-right">
-							<li id = "searchButton"><a href="/#!/search" ng-click="currentPage('searchButton');">Liste des Packages</a></li>
-							<li id = "ticketsButton"><a href="/#!/tickets" ng-click="currentPage('ticketsButton');">Liste des Tickets</a></li>
-							<li id = "contribButton"><a href="/#!/contribution" ng-click="currentPage('contribButton');">Contribution</a></li>
-							<li id = "faqButton"><a href="/#!/faq" ng-click="currentPage('faqButton');">FAQ / Tutoriels</a></li>
+							<li id="searchButton" ng-class="currentPage('/search');"><a href="/#!/search">Liste des Packages</a></li>
+							<li id="ticketsButton" ng-class="currentPage('/tickets');"><a href="/#!/tickets">Liste des Tickets</a></li>
+							<li id="contribButton" ng-class="currentPage('/contribution');"><a href="/#!/contribution">Contribution</a></li>
+							<li id="faqButton" ng-class="currentPage('/faq');"><a href="/#!/faq">FAQ / Tutoriels</a></li>
 						</ul>
 					</div>
 				</div>

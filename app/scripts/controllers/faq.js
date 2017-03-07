@@ -15,8 +15,6 @@
  */
 angular.module('frontendApp')
 	.controller('FaqCtrl', function ($scope, $http) {
-		$scope.currentPage('faqButton');
-
 		/*Affichage des Tutoriels*/
 		function displayTutos() {
 			$http.get('../json/tutos.json').then(function(data) {
