@@ -17,7 +17,7 @@
 		<link rel="stylesheet" href="styles/flexslider.css">
 		<link rel="stylesheet" href="styles/font-awesome.css">
 	</head>
-	<body ng-app="frontendApp" ng-controller="ControllerMain">
+	<body ng-app="frontendApp" ng-controller="ControllerMain as main">
 		<div class="header">
 			<div class="navbar navbar-default" role="navigation">
 				<div class="container">
@@ -32,10 +32,10 @@
 					</div>
 					<div class="collapse navbar-collapse" id="js-navbar-collapse">
 						<ul id="navbarPages" class="nav navbar-nav pull-right">
-							<li id="searchButton" ng-class="currentPage('/search');"><a href="/#!/search">Liste des Packages</a></li>
-							<li id="ticketsButton" ng-class="currentPage('/tickets');"><a href="/#!/tickets">Liste des Tickets</a></li>
-							<li id="contribButton" ng-class="currentPage('/contribution');"><a href="/#!/contribution">Contribution</a></li>
-							<li id="faqButton" ng-class="currentPage('/faq');"><a href="/#!/faq">FAQ / Tutoriels</a></li>
+							<li id="searchButton" ng-class="main.currentPage('/search');"><a href="/#!/search">Liste des Packages</a></li>
+							<li id="ticketsButton" ng-class="main.currentPage('/tickets');"><a href="/#!/tickets">Liste des Tickets</a></li>
+							<li id="contribButton" ng-class="main.currentPage('/contribution');"><a href="/#!/contribution">Contribution</a></li>
+							<li id="faqButton" ng-class="main.currentPage('/faq');"><a href="/#!/faq">FAQ / Tutoriels</a></li>
 						</ul>
 					</div>
 				</div>
@@ -101,6 +101,7 @@
 
 		<!-- build:js({.tmp,app}) scripts/scripts.js -->
 			<script src="scripts/app.js"></script>
+			<script src="scripts/services/env.js"></script>
 			<script src="scripts/controllers/login.js"></script>
 			<script src="scripts/controllers/search.js"></script>
 			<script src="scripts/controllers/tickets.js"></script>

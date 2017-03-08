@@ -38,12 +38,11 @@ frontendApp
 		}
 	};
 
-	/*Correct page*/
-	$scope.currentPage = function(path) {
-		return ($location.path().substr(0, path.length) === path) ? 'current-page' : '';
-	};
-})
-	.config(function ($routeProvider) {
+		/*Current page*/
+		this.currentPage = function(path) {
+			return ($location.path().substr(0, path.length) === path) ? 'current-page' : '';
+		};
+	})
 		/* Routes */
 		$routeProvider
 			.when('/', {
