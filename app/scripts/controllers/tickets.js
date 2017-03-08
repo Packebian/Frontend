@@ -14,7 +14,7 @@
  * Controller of the frontendApp
  */
 angular.module('frontendApp')
-	.controller('TicketsCtrl', function ($scope, $http) {
+	.controller('TicketsCtrl', ['$scope', '$http', 'Environment', function ($scope, $http, Environment) {
 
 		var vm = this;
 		this.data = [];
@@ -38,10 +38,10 @@ angular.module('frontendApp')
 			vm.searchFilter[vm.searchOn] = vm.userQuery;
 		};
 
-		$http.get($scope.getApiAddress('/tickets')).then(function(data) {
+		$http.get(Environment.getApiAddress('/tickets')).then(function(data) {
 			vm.data = data.data;
 		}, function(error) {
 			console.log(error);
 		});
 
-	});
+	}]);

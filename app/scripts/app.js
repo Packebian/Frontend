@@ -24,11 +24,6 @@ var frontendApp = angular.module('frontendApp', [
 
 frontendApp
 	.controller('ControllerMain', function ControllerMain($scope, $location, $http) {
-	/*Adresse de l'API*/
-	var apiAddress = 'http://192.168.99.100:1337';
-	$scope.getApiAddress = function(target) {
-		return apiAddress + target;
-	};
 
 	/*Variables d'affichage*/
 	$scope.displayVal = false;
