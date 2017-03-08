@@ -1,4 +1,4 @@
-<!-- 
+<!--
 	Created on	: 8 févr. 2017, 09:02:32
 	Author		: Germain Lecorps and Régis Ramel
 -->
@@ -6,9 +6,20 @@
 <div>
 	<h1>FAQ / Tutoriels</h1>
 	<h2>Tutoriels</h2>
-	<div id="tutorials" class="faqAndTutos"></div>
+	<div id="tutorials" class="faqAndTutos">
+		<div class='tutorial' ng-repeat="tuto in faq.tutos">
+			<h3>{{tuto.name}}</h3>
+			<p>{{tuto.content}}</p>
+		</div>
+	</div>
+	<br><br>
 	<br>
 	<br>
 	<h2>FAQ</h2>
-	<div id="faq" class="faqAndTutos"></div>
+	<div id="faqs" class="faqAndTutos">
+		<div class='faq' ng-repeat="faq in faq.faqs">
+			<h3>{{faq.question}}</h3>
+			<p>{{faq.answer}}</p>
+		</div>
+	</div>
 </div>
