@@ -20,7 +20,7 @@ var packebianApp = angular.module("packebianApp", [
 
 packebianApp
 	.controller("ControllerMain", function ControllerMain($scope, $location) {
-
+		
 		/*Variables d'affichage*/
 		$scope.displayVal = false;
 
