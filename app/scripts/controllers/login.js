@@ -3,7 +3,7 @@
 	Author		: Germain Lecorps and Régis Ramel
 */
 
-'use strict';
+"use strict";
 /**
  * @ngdoc function
  * @name packebianApp.controller:LoginCtrl
@@ -12,27 +12,27 @@
  * Controller of the packebianApp
  */
 packebianApp
-	.controller('LoginCtrl', function ($scope, $location) {
+	.controller("LoginCtrl", function ($scope, $location) {
 
 		/*Fonction de login*/
 		this.login = function() {
-			var bypass = true;
-			$scope.username = '';
-			$scope.password = '';
+			var bypass = false;
+			$scope.username = "";
+			$scope.password = "";
 			if(bypass) {
 				$scope.$parent.displayVal = true;
-				$location.path('/search');
+				$location.path("/search");
 				return;
 			}
 
-			var realUsername = document.getElementById('username').value;
-			var realPassword = document.getElementById('password').value;
+			var realUsername = document.getElementById("username").value;
+			var realPassword = document.getElementById("password").value;
 
-			if(realUsername === 'laRoulade' && realPassword === 'RAVH') {
+			if(realUsername === "laRoulade" && realPassword === "RAVH") {
 				$scope.$parent.displayVal = true;
-				$location.path('/home');
+				$location.path("/search");
 			} else {
-				document.getElementById('form').innerHTML += 'Échec d\'authentification';
+				document.getElementById("form").innerHTML += "Échec d\'authentification";
 			}
 		};
 	});

@@ -3,7 +3,7 @@
 		Author		: Germain Lecorps and Régis Ramel
 */
 
-'use strict';
+"use strict";
 
 /**
  * @ngdoc function
@@ -14,17 +14,17 @@
  * Controller of the packebianApp
  */
 packebianApp
-	.controller('TicketsCtrl', ['$scope', '$http', 'Environment', function ($scope, $http, Environment) {
+	.controller("TicketsCtrl", ["$scope", "$http", "Environment", function ($scope, $http, Environment) {
 
 		var vm = this;
 		this.data = [];
 
 		/* Variables utilisés pour le tri */
-		this.filtre = '';
+		this.filtre = "";
 		this.search = {};
 		this.searchFilter = {};
-		this.userQuery = '';
-		this.searchOn = '$';
+		this.userQuery = "";
+		this.searchOn = "$";
 
 		/*Critères de tri*/
 		this.orderByMe = function(x) {
@@ -38,7 +38,7 @@ packebianApp
 			vm.searchFilter[vm.searchOn] = vm.userQuery;
 		};
 
-		$http.get(Environment.getApiAddress('/tickets')).then(function(data) {
+		$http.get(Environment.getApiAddress("/tickets")).then(function(data) {
 			vm.data = data.data;
 		}, function(error) {
 			console.log(error);

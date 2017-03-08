@@ -3,7 +3,7 @@
 		Author		: Germain Lecorps and Régis Ramel
 */
 
-'use strict';
+"use strict";
 
 /**
  * @ngdoc overview
@@ -13,19 +13,20 @@
  * # frontendApp
  * Main module of the application.
  */
-var packebianApp = angular.module('packebianApp', [
-		'ngRoute',
+var packebianApp = angular.module("packebianApp", [
+		"ngRoute",
+		"auth0.auth0"
 	]);
 
 packebianApp
-	.controller('ControllerMain', function ControllerMain($scope, $location) {
+	.controller("ControllerMain", function ControllerMain($scope, $location) {
 
 		/*Variables d'affichage*/
 		$scope.displayVal = false;
 
 		/*Privilèges administrateur*/
 		this.isAdmin = function(user) {
-			if(user === 'laRoulade') {
+			if(user === "laRoulade") {
 				return true;
 			} else {
 				return false;
@@ -34,38 +35,43 @@ packebianApp
 
 		/*Current page*/
 		this.currentPage = function(path) {
-			return ($location.path().substr(0, path.length) === path) ? 'current-page' : '';
+			return ($location.path().substr(0, path.length) === path) ? "current-page" : "";
 		};
 	})
 	.config(function ($routeProvider, angularAuth0Provider) {
 		/* Routes */
 		$routeProvider
-			.when('/', {
-				templateUrl: 'views/login.html',
-				controller: 'LoginCtrl',
-				controllerAs: 'login'
+			.when("/", {
+				templateUrl: "views/login.html",
+				controller: "LoginCtrl",
+				controllerAs: "login"
 			})
-			.when('/search', {
-				templateUrl: 'views/search.html',
-				controller: 'SearchCtrl',
-				controllerAs: 'search'
+			.when("/search", {
+				templateUrl: "views/search.html",
+				controller: "SearchCtrl",
+				controllerAs: "search"
 			})
-			.when('/tickets', {
-				templateUrl: 'views/tickets.html',
-				controller: 'TicketsCtrl',
-				controllerAs: 'tickets'
+			.when("/tickets", {
+				templateUrl: "views/tickets.html",
+				controller: "TicketsCtrl",
+				controllerAs: "tickets"
 			})
-			.when('/contribution', {
-				templateUrl: 'views/contribution.html',
-				controller: 'ContributionCtrl',
-				controllerAs: 'contrib'
+			.when("/contribution", {
+				templateUrl: "views/contribution.html",
+				controller: "ContributionCtrl",
+				controllerAs: "contrib"
 			})
-			.when('/faq', {
-				templateUrl: 'views/faq.html',
-				controller: 'FaqCtrl',
-				controllerAs: 'faq'
+			.when("/faq", {
+				templateUrl: "views/faq.html",
+				controller: "FaqCtrl",
+				controllerAs: "faq"
 			})
 			.otherwise({
-				redirectTo: '/'
+				redirectTo: "/"
+			});
+			/* auth0 */
+			angularAuth0Provider.init({
+				clientID: "kMnc5fUisauwQfrcGsDiD100PhRGy8KY",
+				domain: "packebian.eu.auth0.com"
 			});
 	});

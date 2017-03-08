@@ -3,7 +3,7 @@
 		Author		 : Germain Lecorps and Régis Ramel
 */
 
-'use strict';
+"use strict";
 
 /**
  * @ngdoc function
@@ -14,4 +14,4 @@
  * Controller of the frontendApp
  */
 packebianApp
-	.controller('ContributionCtrl', function () {});
+	.controller("ContributionCtrl", function () {});
