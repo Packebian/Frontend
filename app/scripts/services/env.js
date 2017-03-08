@@ -7,7 +7,7 @@
  * # Environment
  * Service in the Packebian app.
  */
-angular.module('frontendApp')
+packebianApp
 	.service('Environment', function Environment() {
 		// AngularJS will instantiate a singleton by calling "new" on this function
 		var env = 'http://localhost:9000';

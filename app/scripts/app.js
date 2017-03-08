@@ -7,42 +7,37 @@
 
 /**
  * @ngdoc overview
- * @name frontendApp
+ * @name packebianApp
  * @argument $scope
  * @description
  * # frontendApp
  * Main module of the application.
  */
-var frontendApp = angular.module('frontendApp', [
-		'ngAnimate',
-		'ngCookies',
-		'ngResource',
+var packebianApp = angular.module('packebianApp', [
 		'ngRoute',
-		'ngSanitize',
-		'ngTouch'
 	]);
 
-frontendApp
-	.controller('ControllerMain', function ControllerMain($scope, $location, $http) {
+packebianApp
+	.controller('ControllerMain', function ControllerMain($scope, $location) {
 
-	/*Variables d'affichage*/
-	$scope.displayVal = false;
+		/*Variables d'affichage*/
+		$scope.displayVal = false;
 
-	/*Privilèges administrateur*/
-	$scope.isAdmin = function(user) {
-		if(user === 'laRoulade') {
-			return true;
-		}
-		else {
-			return false;
-		}
-	};
+		/*Privilèges administrateur*/
+		this.isAdmin = function(user) {
+			if(user === 'laRoulade') {
+				return true;
+			} else {
+				return false;
+			}
+		};
 
 		/*Current page*/
 		this.currentPage = function(path) {
 			return ($location.path().substr(0, path.length) === path) ? 'current-page' : '';
 		};
 	})
+	.config(function ($routeProvider, angularAuth0Provider) {
 		/* Routes */
 		$routeProvider
 			.when('/', {

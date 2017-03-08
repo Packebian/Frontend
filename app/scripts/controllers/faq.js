@@ -7,13 +7,13 @@
 
 /**
  * @ngdoc function
- * @name frontendApp.controller:FaqCtrl
+ * @name packebianApp.controller:FaqCtrl
  * @argument $scope
  * @description
  * # FaqCtrl
  * Controller of the frontendApp
  */
-angular.module('frontendApp')
+packebianApp
 	.controller('FaqCtrl', function ($scope, $http) {
 
 		var vm = this;

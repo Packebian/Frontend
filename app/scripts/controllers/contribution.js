@@ -7,11 +7,11 @@
 
 /**
  * @ngdoc function
- * @name frontendApp.controller:ContributionCtrl
+ * @name packebianApp.controller:ContributionCtrl
  * @argument $scope
  * @description
  * # ContributionCtrl
  * Controller of the frontendApp
  */
-angular.module('frontendApp')
+packebianApp
 	.controller('ContributionCtrl', function () {});

@@ -13,7 +13,7 @@
  * # SearchCtrl
  * Controller of the frontendApp
  */
-angular.module('frontendApp')
+packebianApp
 	.controller('SearchCtrl', ['$scope', '$http', 'Environment', function ($scope, $http, Environment) {
 
 		var vm = this;

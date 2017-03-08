@@ -7,13 +7,13 @@
 
 /**
  * @ngdoc function
- * @name frontendApp.controller:TicketsCtrl
+ * @name packebianApp.controller:TicketsCtrl
  * @argument $scope
  * @description
  * # TicketsCtrl
- * Controller of the frontendApp
+ * Controller of the packebianApp
  */
-angular.module('frontendApp')
+packebianApp
 	.controller('TicketsCtrl', ['$scope', '$http', 'Environment', function ($scope, $http, Environment) {
 
 		var vm = this;

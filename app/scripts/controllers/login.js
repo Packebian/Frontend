@@ -6,21 +6,22 @@
 'use strict';
 /**
  * @ngdoc function
- * @name frontendApp.controller:LoginCtrl
+ * @name packebianApp.controller:LoginCtrl
  * @description
  * # LoginCtrl
- * Controller of the frontendApp
+ * Controller of the packebianApp
  */
-angular.module('frontendApp')
-	.controller('LoginCtrl', function ($scope) {
-		$scope.view = 'login';
+packebianApp
+	.controller('LoginCtrl', function ($scope, $location) {
+
 		/*Fonction de login*/
-		$scope.login = function() {
+		this.login = function() {
 			var bypass = true;
 			$scope.username = '';
 			$scope.password = '';
 			if(bypass) {
 				$scope.$parent.displayVal = true;
+				$location.path('/search');
 				return;
 			}
 
@@ -29,6 +30,7 @@ angular.module('frontendApp')
 
 			if(realUsername === 'laRoulade' && realPassword === 'RAVH') {
 				$scope.$parent.displayVal = true;
+				$location.path('/home');
 			} else {
 				document.getElementById('form').innerHTML += 'Échec d\'authentification';
 			}
