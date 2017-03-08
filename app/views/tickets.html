@@ -1,15 +1,15 @@
-<!-- 
+<!--
 		Created on	: 16 févr. 2017, 09:58:32
 		Author		: Germain Lecorps and Régis Ramel
 -->
 
 <script src="scripts/controllers/tickets.js"></script>
 <h1>Liste des Tickets</h1>
-<div ng-controller="TicketsCtrl">
+<div>
 	<div class="tableBfont">
 		<div class="wrapperB">
-			<input ng-model="userQuery" ng-change="setSearchFilter()" type="text" placeholder="Rechercher..." />
-			<select ng-model="searchOn" ng-change="setSearchFilter()">
+			<input ng-model="tickets.userQuery" ng-change="tickets.setSearchFilter()" type="text" placeholder="Rechercher..." />
+			<select ng-model="tickets.searchOn" ng-change="tickets.setSearchFilter()">
 				<option value="$">Any</option>
 				<option value="name">Nom</option>
 				<option value="class">Matière</option>
@@ -19,15 +19,15 @@
 			<br><br>
 			<table class="tableB" border="1" width="100%">
 				<tr id="rowTitles" class="rowB headerB blue" >
-					<th style="text-align: center" ng-click="orderByMe('name')">Nom</th>
-					<th style="text-align: center" ng-click="orderByMe('maintainer')">Maintainer</th>
-					<th style="text-align: center" ng-click="orderByMe('major')">Filière</th>
-					<th style="text-align: center" ng-click="orderByMe('class')">Matière</th>
-					<th style="text-align: center" ng-click="orderByMe('class')">Nombre de votes</th>
+					<th style="text-align: center" ng-click="tickets.orderByMe('name')">Nom</th>
+					<th style="text-align: center" ng-click="tickets.orderByMe('maintainer')">Maintainer</th>
+					<th style="text-align: center" ng-click="tickets.orderByMe('major')">Filière</th>
+					<th style="text-align: center" ng-click="tickets.orderByMe('class')">Matière</th>
+					<th style="text-align: center" ng-click="tickets.orderByMe('class')">Nombre de votes</th>
 					<th style="text-align: center">Voter</th>
 					<th style="text-align: center" ng-show="displayVal">Validation</th>
 				</tr>
-				<tr id="rows" class="rowB" ng-repeat="ticket in tickets | filter: searchFilter | orderBy: order">
+				<tr id="rows" class="rowB" ng-repeat="ticket in tickets.data | filter: tickets.searchFilter | orderBy: tickets.order">
 					<td class="cellB">{{ticket.name}}</td>
 					<td class="cellB">{{ticket.maintainer}}</td>
 					<td class="cellB">{{ticket.major}}</td>

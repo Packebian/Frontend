@@ -16,26 +16,30 @@
 angular.module('frontendApp')
 	.controller('SearchCtrl', function ($scope, $http) {
 
-		/* Récupération des packages */
-		$scope.packages = [];
+		var vm = this;
+		vm.data = [];
+
+		/* Variables utilisés pour le tri */
+		this.filtre = '';
+		this.search = {};
+		this.searchFilter = {};
+		this.userQuery = '';
+		this.searchOn = '$';
 
 		/*Critères de tri*/
-		$scope.orderByMe = function(x) {
-			$scope.order = x;
+		this.orderByMe = function(x) {
+			vm.order = x;
 		};
-		$scope.filtre = '$';
-		$scope.search = {name:'', class:'', $:''};
-		$scope.changeFilterTo = function(pr) {
-			$scope.filtre = pr;
+		this.changeFilterTo = function(pr) {
+			vm.filtre = pr;
 		};
-		$scope.setSearchFilter = function() {
-			$scope.searchFilter = {};
-			$scope.searchFilter[$scope.searchOn] = $scope.userQuery;
+		this.setSearchFilter = function() {
+			vm.searchFilter = {};
+			vm.searchFilter[vm.searchOn] = vm.userQuery;
 		};
 
-		//$http.get('../json/packages.json').then(function(data) {
 		$http.get($scope.getApiAddress('/packages')).then(function(data) {
-			$scope.packages = data.data;
+			vm.data = data.data;
 		}, function(error) {
 			console.log(error);
 		});

@@ -49,31 +49,32 @@ frontendApp
 	};
 })
 	.config(function ($routeProvider) {
+		/* Routes */
 		$routeProvider
 			.when('/', {
 				templateUrl: 'views/login.html',
-				controller: 'LoginCtrl'
-				//controllerAs: 'login'
+				controller: 'LoginCtrl',
+				controllerAs: 'login'
 			})
 			.when('/search', {
 				templateUrl: 'views/search.html',
-				controller: 'SearchCtrl'
-				//controllerAs: 'search'
+				controller: 'SearchCtrl',
+				controllerAs: 'search'
 			})
 			.when('/tickets', {
 				templateUrl: 'views/tickets.html',
-				controller: 'TicketsCtrl'
-				//controllerAs: 'tickets'
+				controller: 'TicketsCtrl',
+				controllerAs: 'tickets'
 			})
 			.when('/contribution', {
 				templateUrl: 'views/contribution.html',
-				controller: 'ContributionCtrl'
-				//controllerAs: 'contribution'
+				controller: 'ContributionCtrl',
+				controllerAs: 'contrib'
 			})
 			.when('/faq', {
 				templateUrl: 'views/faq.html',
-				controller: 'FaqCtrl'
-				//controllerAs: 'faq'
+				controller: 'FaqCtrl',
+				controllerAs: 'faq'
 			})
 			.otherwise({
 				redirectTo: '/'
