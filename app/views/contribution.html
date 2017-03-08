@@ -2,83 +2,77 @@
 		Created on	: 7 févr. 2017, 09:58:32
 		Author		: Germain Lecorps and Régis Ramel
 -->
-
-<script src="scripts/controllers/contribution.js"></script>
-<div ng-controller="ContributionCtrl">
-	<script>
-		document.getElementById("ajoutArchive").className = "invisible";
-		document.getElementById("lienArc").className = "invisible";
-		document.getElementById("lienG").className = "invisible";
-	</script>
+<div>
 	<div class="contact-us container">
 		<h1>Formulaire de contribution</h1>
 		<form class="contact-us">
 			<p>Ceci est la page proposant le formulaire d'ajout d'un package par un contributeur</p>
-			<!--Dépôt-->
+			<!-- Type of source push -->
 			<label for="name_package" id="typepLabel">Type de dépôt</label><br>
 			<label class="filiere-checkbox">
-				<input type="radio" name="depot" onclick="
-					document.getElementById('ajoutArchive').className = '';
-					document.getElementById('lienArc').className = 'invisible';
-					document.getElementById('lienG').className = 'invisible';">Dépôt d'archive<br>
+				<input type="radio" name="depot" value='tarball' ng-model="form.repoType">Dépôt d'archive<br>
 			</label>
 			<label class="filiere-checkbox">
-				<input type="radio" name="depot" onclick="
-					document.getElementById('ajoutArchive').className = 'invisible';
-					document.getElementById('lienArc').className = '';
-					document.getElementById('lienG').className = 'invisible';">Lien de l'archive<br>
+				<input type="radio" name="depot" value='tarballLink' ng-model="form.repoType">Lien de l'archive<br>
 			</label>
 			<label class="filiere-checkbox">
-				<input type="radio" name="depot" onclick="
-					document.getElementById('ajoutArchive').className = 'invisible';
-					document.getElementById('lienArc').className = 'invisible';
-					document.getElementById('lienG').className = '';">Lien Git
-			</label><br>
-			<div id="ajoutArchive">
-				<input type=file id=fichier name=fichier/>
-				<button ng-click=ajouter()>Ajouter</button><br>
-			</div>
-			<div id="lienArc">
-				<input id="lienArchive" type="text" name="lien_archive" placeholder="Lien vers l'archive..."><br>
-			</div>
-			<div id="lienG">
-				<input id="lienGit" type="text" name="lien_git" placeholder="Lien Git..."><br>
-			</div>
-			<!--Description du package-->
-			<label for="name_package" id="namepLabel">Nom du package</label><br>
-			<input id="name_package" type="text" name="name_package" placeholder="Entrez le nom du package..."><br>
-			<label for="version" id="versionLabel">Version du package</label><br>
-			<input id="name_package" type="text" name="name_package" placeholder="Entrez la version du package sous la forme majeure.mineure.fix..."><br>
-			<label for="architecture" id="architectureLabel">Architecture du package</label><br>
-			<select name="version">
-				<option value="ubuntu">Ubuntu</option>
-				<option value="debian">Debian</option>
-				<option value="windows">Windows</option>
-				<option value="autre">Autre</option>
-			</select><br>
-			<label for="maintainer" id="maintainerLabel">Maintainer</label><br>
-			<input id="maintainer" type="text" name="maintainer" placeholder="Entrez votre nom et prénom..."><br>
-			<label for="filiere" id="filiereLabel">Filière</label><br>
-			<label class = "filiere-checkbox">
-				<input type="checkbox" id="cbox1" value="checkbox1">
-				RICM3
+				<input type="radio" name="depot" value='gitLink' ng-model="form.repoType">Lien Git<br>
 			</label>
-			<label class = "filiere-checkbox">
-				<input type="checkbox" id="cbox1" value="checkbox1">
-				RICM4
-			</label>													
-			<label class = "filiere-checkbox">
-				<input type="checkbox" id="cbox1" value="checkbox1">
-				RICM5
-			</label>													
 			<br>
-			<label for="matiere">Matière</label><br>
-			<input id="matiere" type="text" name="matiere" placeholder="Entrez la matière désirée..."><br>
-			<label for="description" id="descriptionLabel">Description</label><br>
-			<textarea id="message" name="message" placeholder="Description du package..."></textarea><br>
-			<label for="dependance" id="dependanceLabel">Dépendances</label><br>
-			<input id="dependance" type="text" name="dependance" placeholder="Entrez les dépendances nécessaires pour le package séparées par un ;"><br>
-			<button type="submit">Valider</button>
+
+			<div ng-show="form.repoType">
+				<!--  Tarball -->
+				<div id="ajoutArchive" ng-show="form.repoType === 'tarball'">
+					<input type=file id=fichier name=fichier/>
+					<button ng-click=ajouter()>Ajouter</button><br>
+				</div>
+
+				<!-- Tarball link -->
+				<div id="lienArc" ng-show="form.repoType === 'tarballLink'">
+					<input id="lienArchive" type="text" name="lien_archive" placeholder="Lien vers l'archive..."><br>
+				</div>
+
+				<!-- Git link -->
+				<div id="lienG" ng-show="form.repoType === 'gitLink'">
+					<input id="lienGit" type="text" name="lien_git" placeholder="Lien Git..."><br>
+				</div>
+
+				<!--Description du package-->
+				<label for="name_package" id="namepLabel">Nom du package</label><br>
+				<input id="name_package" type="text" name="name_package" placeholder="Entrez le nom du package..."><br>
+				<label for="version" id="versionLabel">Version du package</label><br>
+				<input id="name_package" type="text" name="name_package" placeholder="Entrez la version du package sous la forme majeure.mineure.fix..."><br>
+				<label for="architecture" id="architectureLabel">Architecture du package</label><br>
+				<select name="version">
+					<option value="ubuntu">Ubuntu</option>
+					<option value="debian">Debian</option>
+					<option value="windows">Windows</option>
+					<option value="autre">Autre</option>
+				</select><br>
+				<label for="maintainer" id="maintainerLabel">Maintainer</label><br>
+				<input id="maintainer" type="text" name="maintainer" placeholder="Entrez votre nom et prénom..."><br>
+				<label for="filiere" id="filiereLabel">Filière</label><br>
+				<label class = "filiere-checkbox">
+					<input type="checkbox" id="cbox1" value="checkbox1">
+					RICM3
+				</label>
+				<label class = "filiere-checkbox">
+					<input type="checkbox" id="cbox1" value="checkbox1">
+					RICM4
+				</label>
+				<label class = "filiere-checkbox">
+					<input type="checkbox" id="cbox1" value="checkbox1">
+					RICM5
+				</label>
+				<br>
+				<label for="matiere">Matière</label><br>
+				<input id="matiere" type="text" name="matiere" placeholder="Entrez la matière désirée..."><br>
+				<label for="description" id="descriptionLabel">Description</label><br>
+				<textarea id="message" name="message" placeholder="Description du package..."></textarea><br>
+				<label for="dependance" id="dependanceLabel">Dépendances</label><br>
+				<input id="dependance" type="text" name="dependance" placeholder="Entrez les dépendances nécessaires pour le package séparées par un ;"><br>
+				<button type="submit">Valider</button>
+			</dib>
 		</form>
 	</div>
 </div>
