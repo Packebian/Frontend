@@ -16,6 +16,7 @@
 var packebianApp = angular.module("packebianApp", [
 		"ngRoute",
 		"auth0.auth0"
+		"ui.router"
 	]);
 
 packebianApp
@@ -38,36 +39,38 @@ packebianApp
 			return ($location.path().substr(0, path.length) === path) ? "current-page" : "";
 		};
 	})
-	.config(function ($routeProvider, angularAuth0Provider) {
+	.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 		/* Routes */
-		$routeProvider
-			.when("/", {
+		$stateProvider
+			.state("login", {
+				url: "/login",
 				templateUrl: "views/login.html",
 				controller: "LoginCtrl",
 				controllerAs: "login"
 			})
-			.when("/search", {
+			.state("search", {
+				url: "/search",
 				templateUrl: "views/search.html",
 				controller: "SearchCtrl",
 				controllerAs: "search"
 			})
-			.when("/tickets", {
+			.state("tickets", {
+				url: "/tickets",
 				templateUrl: "views/tickets.html",
 				controller: "TicketsCtrl",
 				controllerAs: "tickets"
 			})
-			.when("/contribution", {
+			.state("contribution", {
+				url: "/contribution",
 				templateUrl: "views/contribution.html",
 				controller: "ContributionCtrl",
 				controllerAs: "contrib"
 			})
-			.when("/faq", {
+			.state("faq", {
+				url: "/faq",
 				templateUrl: "views/faq.html",
 				controller: "FaqCtrl",
 				controllerAs: "faq"
-			})
-			.otherwise({
-				redirectTo: "/"
 			});
 			/* auth0 */
 			angularAuth0Provider.init({
@@ -75,3 +78,8 @@ packebianApp
 				domain: "packebian.eu.auth0.com"
 			});
 	});
+		$urlRouterProvider.otherwise('/login');
+		$locationProvider.html5Mode(true);
+		// Remove the ! from the hash so that
+    // auth0.js can properly parse it
+    $locationProvider.hashPrefix('');

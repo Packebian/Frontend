@@ -6,6 +6,7 @@
 <!Doctype html>
 <html>
 	<head>
+		<base href="/" target="_blank">
 		<meta charset="utf-8">
 		<title>Gestionnaire de Packages</title>
 		<meta name="description" content="">
@@ -17,7 +18,7 @@
 		<link rel="stylesheet" href="styles/flexslider.css">
 		<link rel="stylesheet" href="styles/font-awesome.css">
 	</head>
-	<body ng-app="packebianApp" ng-controller="ControllerMain as main">
+	<body ng-app="packebianApp" ng-controller="MainCtrl as main">
 		<div class="header">
 			<div class="navbar navbar-default" role="navigation">
 				<div class="container">
@@ -32,10 +33,10 @@
 					</div>
 					<div class="collapse navbar-collapse" id="js-navbar-collapse">
 						<ul id="navbarPages" class="nav navbar-nav pull-right">
-							<li id="searchButton" ng-class="main.currentPage('/search');"><a href="/#!/search">Liste des Packages</a></li>
-							<li id="ticketsButton" ng-class="main.currentPage('/tickets');"><a href="/#!/tickets">Liste des Tickets</a></li>
-							<li id="contribButton" ng-class="main.currentPage('/contribution');"><a href="/#!/contribution">Contribution</a></li>
-							<li id="faqButton" ng-class="main.currentPage('/faq');"><a href="/#!/faq">FAQ / Tutoriels</a></li>
+							<li id="searchButton" ng-class="main.currentPage('/search');"><a href="search">Liste des Packages</a></li>
+							<li id="ticketsButton" ng-class="main.currentPage('/tickets');"><a href="tickets">Liste des Tickets</a></li>
+							<li id="contribButton" ng-class="main.currentPage('/contribution');"><a href="contribution">Contribution</a></li>
+							<li id="faqButton" ng-class="main.currentPage('/faq');"><a href="faq">FAQ / Tutoriels</a></li>
 						</ul>
 					</div>
 				</div>
@@ -43,13 +44,7 @@
 		</div>
 
 		<div class="container">
-			<div ng-view=""></div>
-		</div>
-
-		<div class="footer">
-			<div class="container">
-				<p></p>
-			</div>
+			<section ui-view></section>
 		</div>
 
 		<footer>
@@ -96,6 +91,7 @@
 			<script src="bower_components/angular-route/angular-route.js"></script>
 			<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 			<script src="bower_components/angular-touch/angular-touch.js"></script>
+			<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 			<!-- endbower -->
 		<!-- endbuild -->
 
