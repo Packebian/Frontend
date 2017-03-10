@@ -32,7 +32,7 @@
 					<td class="cellB">{{ticket.maintainer}}</td>
 					<td class="cellB">{{ticket.major}}</td>
 					<td class="cellB">{{ticket.class}}</td>
-					<td class="cellB">{{ticket.results.upvotes - ticket.results.downvotes}}</td>
+					<td id={{ticket.id}} class="cellB">{{ticket.results.upvotes - ticket.results.downvotes}}</td>
 					<td class="cellB">
 						<input type="button" value="-" ng-click="vote(ticket.id, -1, 1)">
 						<input type="button" value="+" ng-click="vote(ticket.id, 1, 1)">

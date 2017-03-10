@@ -100,10 +100,15 @@ packebianApp
 				};
 			}
 			
-			console.log(req);
+			var result = 0;
 			
-			$http(req).then(function(data) {
-				console.log(data);
+			$http(req).then(function() {
+				$http.get(Environment.getApiAddress("/tickets/" + ticketId)).then(function(data) {
+					result = data.data.results.upvotes - data.data.results.downvotes;
+					document.getElementById(ticketId).innerHTML = result;
+				}, function(error) {
+					console.log(error);
+				});
 			}, function(data) {
 				console.log(data);
 			});
