@@ -30,6 +30,7 @@ packebianApp
       authManager.unauthenticate();
       userInfos = null;
       deferredLogout.resolve();
+      $state.go('login');
     };
 
     // Set up the logic for when a user authenticates
@@ -46,7 +47,7 @@ packebianApp
           localStorage.setItem(auth0.STORAGE_USERINFOS, JSON.stringify(userInfos));
           deferredUserInfos.resolve(userInfos);
 
-          $state.go('login', null, {reload: true});
+          $state.go('search');
         });
 
       });
