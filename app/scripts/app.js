@@ -15,31 +15,18 @@
  */
 var packebianApp = angular.module("packebianApp", [
 		"ngRoute",
-		"auth0.auth0"
+		"auth0.lock",
+		"angular-jwt",
 		"ui.router"
 	]);
 
 packebianApp
-	.controller("ControllerMain", function ControllerMain($scope, $location) {
-
-		/*Variables d'affichage*/
-		$scope.displayVal = false;
-
-		/*Privilèges administrateur*/
-		this.isAdmin = function(user) {
-			if(user === "laRoulade") {
-				return true;
-			} else {
-				return false;
-			}
-		};
-
-		/*Current page*/
-		this.currentPage = function(path) {
-			return ($location.path().substr(0, path.length) === path) ? "current-page" : "";
-		};
-	})
-	.config(function($stateProvider, $urlRouterProvider, $locationProvider){
+	.config(["$stateProvider", "$urlRouterProvider", "lockProvider", "jwtOptionsProvider", "$locationProvider", "$httpProvider",
+	function($stateProvider, $urlRouterProvider, lockProvider, jwtOptionsProvider, $locationProvider, $httpProvider) {
+		/*
+		 * Inspired by Angular official examples :
+		 * https://github.com/auth0-samples/auth0-angularjs-sample/tree/master/08-Calling-Api
+		 */
 		/* Routes */
 		$stateProvider
 			.state("login", {
@@ -72,14 +59,33 @@ packebianApp
 				controller: "FaqCtrl",
 				controllerAs: "faq"
 			});
-			/* auth0 */
-			angularAuth0Provider.init({
-				clientID: "kMnc5fUisauwQfrcGsDiD100PhRGy8KY",
-				domain: "packebian.eu.auth0.com"
-			});
-	});
 		$urlRouterProvider.otherwise('/login');
+
+		/* auth0 - lock */
+		lockProvider.init({
+			clientID: "kMnc5fUisauwQfrcGsDiD100PhRGy8KY",
+			domain: "packebian.eu.auth0.com"
+		});
+
+		/* angular-jwt */
+		jwtOptionsProvider.config({
+			tokenGetter: ["options", function (options) {
+				if (options && options.url.substr(options.url.length - 5) === ".html") {
+					return null;
+				}
+				return localStorage.getItem("id_token");
+			}],
+			whiteListedDomains: ["localhost"],
+			// unauthenticatedRedirectPath: "/login"
+		});
+
 		$locationProvider.html5Mode(true);
+
 		// Remove the ! from the hash so that
     // auth0.js can properly parse it
     $locationProvider.hashPrefix('');
+
+		// Add the jwtInterceptor to the array of HTTP interceptors
+		// so that JWTs are attached as Authorization headers
+		$httpProvider.interceptors.push("jwtInterceptor");
+	}]);

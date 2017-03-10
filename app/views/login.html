@@ -9,23 +9,12 @@
 	Login
 </header>
 <div>
-	<form id="form" name="form" role="form">
-		<div class="login_form">
-			<label class="login_label" for="username">
-				Username
-			</label>
-			<input type="text" name="username" id="username" class="login_input">
-		</div>
-		<div class="login_form">
-			<label class="login_label" for="password">
-				Password
-			</label>
-			<input type="password" name="password" id="password" class="login_input">
-		</div>
-		<div class="login_actions">
-			<button type="submit" class="btn" ng-click="login.login()">
-				Login
-			</button>
-		</div>
-	</form>
+	<div>
+		<h1>Hello {{main.profile.name}}</h1>
+
+		<!-- <button ng-if="!login.isAuthenticated()" ng-click="login.login()">Log In</button>
+		<button ng-if="login.isAuthenticated()" ng-click="login.logout()">Log Out</button> -->
+		<button ng-click="login.login()">Log In</button>
+		<button ng-click="login.logout()">Log Out</button>
+	</div>
 </div>

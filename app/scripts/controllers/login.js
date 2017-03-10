@@ -1,6 +1,6 @@
 /*
-	Created on	: 7 févr. 2017, 09:58:32
-	Author		: Germain Lecorps and Régis Ramel
+  Created on	: 7 févr. 2017, 09:58:32
+  Author		: Germain Lecorps and Régis Ramel
 */
 
 "use strict";
@@ -12,27 +12,17 @@
  * Controller of the packebianApp
  */
 packebianApp
-	.controller("LoginCtrl", function ($scope, $location) {
+  .controller("LoginCtrl", ["$scope", "$location", "auth0Service", function ($scope, $location, auth0Service) {
 
-		/*Fonction de login*/
-		this.login = function() {
-			var bypass = false;
-			$scope.username = "";
-			$scope.password = "";
-			if(bypass) {
-				$scope.$parent.displayVal = true;
-				$location.path("/search");
-				return;
-			}
+    this.login = function(){
+      auth0Service.login();
+    };
 
-			var realUsername = document.getElementById("username").value;
-			var realPassword = document.getElementById("password").value;
+    this.logout = function(){
+      auth0Service.logout();
+    };
 
-			if(realUsername === "laRoulade" && realPassword === "RAVH") {
-				$scope.$parent.displayVal = true;
-				$location.path("/search");
-			} else {
-				document.getElementById("form").innerHTML += "Échec d\'authentification";
-			}
-		};
-	});
+    // this.isAuthenticated = function() {
+    //   return auth0Service.isAuthenticated();
+    // }
+  }]);
