@@ -14,7 +14,7 @@
  * Controller of the frontendApp
  */
 packebianApp
-	.controller("SearchCtrl", ["$scope", "$http", "Environment", function ($scope, $http, Environment) {
+	.controller("SearchCtrl", ["$http", "Environment", function ($http, Environment) {
 
 		var vm = this;
 		vm.data = [];

@@ -4,8 +4,8 @@
  * https://github.com/auth0-samples/auth0-angularjs-sample/tree/master/08-Calling-Api
  */
 packebianApp
-  .controller("MainCtrl", ["$scope", "$location", "authManager", "auth0Service",
-  function MainCtrl($scope, $location, authManager, auth0Service) {
+  .controller("MainCtrl", ["$scope", "$location", "authManager", "auth0Service", "lock",
+  function MainCtrl($scope, $location, authManager, auth0Service, lock) {
 
     var vm = this;
 
@@ -17,12 +17,12 @@ packebianApp
       return ($location.path().substr(0, path.length) === path) ? "current-page" : "";
     };
 
-    auth0Service.getDeferredUserProfile().then(function (profile) {
-      vm.profile = profile;
+    auth0Service.getDeferredUserInfos().then(function (userInfos) {
+      vm.userInfos = userInfos;
     });
 
-    auth0Service.getDeferredUserToken().then(function (token) {
-      vm.token = token;
+    auth0Service.getDeferredLogout().then(function () {
+      vm.userInfos = null;
     });
 
     // Register the authentication listener that is
@@ -36,6 +36,8 @@ packebianApp
 
     // Use redirectWhenUnauthenticated to redirect to unauthenticatedRedirectPath, if server returns 401.
     // set up in app.js
-    authManager.redirectWhenUnauthenticated();
+    // authManager.redirectWhenUnauthenticated();
 
+    // Register synchronous hash parser
+    lock.interceptHash();
   }]);

@@ -14,7 +14,7 @@
  * Controller of the packebianApp
  */
 packebianApp
-	.controller("TicketsCtrl", ["$scope", "$http", "Environment", function ($scope, $http, Environment) {
+	.controller("TicketsCtrl", ["$http", "Environment", function ($http, Environment) {
 
 		var vm = this;
 		this.data = [];

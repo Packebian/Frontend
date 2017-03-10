@@ -14,7 +14,7 @@
  * Controller of the frontendApp
  */
 packebianApp
-	.controller("FaqCtrl", function ($scope, $http) {
+	.controller("FaqCtrl", function ($http) {
 
 		var vm = this;
 		this.tutos = [];
