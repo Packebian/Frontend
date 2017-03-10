@@ -21,7 +21,7 @@
 			<br>
 
 			<div ng-show="form.repoType">
-				<!--  Tarball -->
+				<!-- Tarball -->
 				<div id="ajoutArchive" ng-show="form.repoType === 'tarball'">
 					<input type=file id=fichier name=fichier/>
 					<button ng-click=ajouter()>Ajouter</button><br>
@@ -41,9 +41,9 @@
 				<label for="name_package" id="namepLabel">Nom du package</label><br>
 				<input id="name_package" type="text" name="name_package" placeholder="Entrez le nom du package..."><br>
 				<label for="version" id="versionLabel">Version du package</label><br>
-				<input id="name_package" type="text" name="name_package" placeholder="Entrez la version du package sous la forme majeure.mineure.fix..."><br>
+				<input id="version_package" type="text" name="name_package" placeholder="Entrez la version du package sous la forme majeure.mineure.fix..."><br>
 				<label for="architecture" id="architectureLabel">Architecture du package</label><br>
-				<select name="version">
+				<select id="architecture_package" name="version">
 					<option value="ubuntu">Ubuntu</option>
 					<option value="debian">Debian</option>
 					<option value="windows">Windows</option>
@@ -53,15 +53,15 @@
 				<input id="maintainer" type="text" name="maintainer" placeholder="Entrez votre nom et prénom..."><br>
 				<label for="filiere" id="filiereLabel">Filière</label><br>
 				<label class = "filiere-checkbox">
-					<input type="checkbox" id="cbox1" value="checkbox1">
+					<input type="checkbox" id="cbox1" value="RICM3">
 					RICM3
 				</label>
 				<label class = "filiere-checkbox">
-					<input type="checkbox" id="cbox1" value="checkbox1">
+					<input type="checkbox" id="cbox2" value="RICM4">
 					RICM4
 				</label>
 				<label class = "filiere-checkbox">
-					<input type="checkbox" id="cbox1" value="checkbox1">
+					<input type="checkbox" id="cbox3" value="RICM5">
 					RICM5
 				</label>
 				<br>
@@ -71,8 +71,8 @@
 				<textarea id="message" name="message" placeholder="Description du package..."></textarea><br>
 				<label for="dependance" id="dependanceLabel">Dépendances</label><br>
 				<input id="dependance" type="text" name="dependance" placeholder="Entrez les dépendances nécessaires pour le package séparées par un ;"><br>
-				<button type="submit">Valider</button>
-			</dib>
+				<button type="submit" ng-click="contribution(1)">Valider</button>
+			</div>
 		</form>
 	</div>
 </div>

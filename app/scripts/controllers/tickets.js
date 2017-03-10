@@ -60,9 +60,13 @@ packebianApp
 		$scope.vote = function(ticketId, voteType, user) {
 			var method = "POST";
 			var voteId = "";
+			var voteValue = voteType;
 			if (vm.data[ticketId-1].voteId !== undefined) {
 				method = "PUT";
 				voteId = vm.data[ticketId-1].voteId;
+				if (voteValue === vm.data[ticketId-1].voteValue) {
+					voteValue = 0;
+				}
 			}
 			
 			var url = "";
@@ -80,7 +84,7 @@ packebianApp
 					data: {
 						"user": user,
 						"ticket": ticketId,
-						"vote": voteType
+						"vote": voteValue
 					},
 					headers: {
 						"Content-Type": "application/json; charset=utf-8"
@@ -92,7 +96,7 @@ packebianApp
 					method: method,
 					url: url,
 					data: {
-						"vote": voteType
+						"vote": voteValue
 					},
 					headers: {
 						"Content-Type": "application/json; charset=utf-8"
@@ -100,12 +104,11 @@ packebianApp
 				};
 			}
 			
-			var result = 0;
-			
-			$http(req).then(function() {
+			$http(req).then(function(data) {
+				vm.data[ticketId-1].voteId = data.data.id;
+				vm.data[ticketId-1].voteValue = data.data.vote;
 				$http.get(Environment.getApiAddress("/tickets/" + ticketId)).then(function(data) {
-					result = data.data.results.upvotes - data.data.results.downvotes;
-					document.getElementById(ticketId).innerHTML = result;
+					document.getElementById(ticketId).innerHTML = data.data.results.upvotes - data.data.results.downvotes;
 				}, function(error) {
 					console.log(error);
 				});
