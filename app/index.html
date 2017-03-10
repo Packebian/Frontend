@@ -29,7 +29,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a href="/" class="navbar-brand">Gestionnaire de packages - Polytech Grenoble</a>
+						<a href="/" class="navbar-brand">Packebian</a>
 					</div>
 					<div class="collapse navbar-collapse" id="js-navbar-collapse">
 						<ul id="navbarPages" class="nav navbar-nav pull-right">
@@ -37,6 +37,7 @@
 							<li id="ticketsButton" ng-class="main.currentPage('/tickets');"><a href="tickets">Liste des Tickets</a></li>
 							<li id="contribButton" ng-class="main.currentPage('/contribution');"><a href="contribution">Contribution</a></li>
 							<li id="faqButton" ng-class="main.currentPage('/faq');"><a href="faq">FAQ / Tutoriels</a></li>
+							<li id="logoutButton" ng-if="isAuthenticated" ng-click="main.logout()"><a href='/'>Logout</a></li>
 						</ul>
 					</div>
 				</div>

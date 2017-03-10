@@ -14,35 +14,37 @@ packebianApp
 		 */
 		/* Routes */
 		$stateProvider
-			.state("login", {
-				url: "/login",
+			.state("home", {
+				url: "/",
 				templateUrl: "views/login.html",
-				controller: "LoginCtrl",
-				controllerAs: "login"
 			})
 			.state("search", {
 				url: "/search",
 				templateUrl: "views/search.html",
 				controller: "SearchCtrl",
-				controllerAs: "search"
+				controllerAs: "search",
+				authenticate: true
 			})
 			.state("tickets", {
 				url: "/tickets",
 				templateUrl: "views/tickets.html",
 				controller: "TicketsCtrl",
-				controllerAs: "tickets"
+				controllerAs: "tickets",
+				authenticate: true
 			})
 			.state("contribution", {
 				url: "/contribution",
 				templateUrl: "views/contribution.html",
 				controller: "ContributionCtrl",
-				controllerAs: "contrib"
+				controllerAs: "contrib",
+				authenticate: true
 			})
 			.state("faq", {
 				url: "/faq",
 				templateUrl: "views/faq.html",
 				controller: "FaqCtrl",
-				controllerAs: "faq"
+				controllerAs: "faq",
+				authenticate: true
 			});
 		$urlRouterProvider.otherwise("/search");
 
@@ -55,8 +57,8 @@ packebianApp
 		/* angular-jwt */
 		jwtOptionsProvider.config({
 			tokenGetter: ["options", auth0Provider.tokenGetter],
-			whiteListedDomains: ["localhost"]
-			// unauthenticatedRedirectPath: "/login"
+			whiteListedDomains: ["localhost"],
+			unauthenticatedRedirectPath: "/"
 		});
 
 		$locationProvider.html5Mode(true);
