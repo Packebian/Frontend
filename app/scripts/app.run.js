@@ -1,3 +1,4 @@
+"use strict";
 /*
  * Highly inspired by Angular official documentation
  * https://github.com/auth0-samples/auth0-angularjs-sample/tree/master/08-Calling-Api
@@ -16,8 +17,12 @@ packebianApp
       return ($location.path().substr(0, path.length) === path) ? "current-page" : "";
     };
 
-    auth0Service.getProfileDeferred().then(function (profile) {
+    auth0Service.getDeferredUserProfile().then(function (profile) {
       vm.profile = profile;
+    });
+
+    auth0Service.getDeferredUserToken().then(function (token) {
+      vm.token = token;
     });
 
     // Register the authentication listener that is

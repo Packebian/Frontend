@@ -12,7 +12,7 @@
  * Controller of the packebianApp
  */
 packebianApp
-  .controller("LoginCtrl", ["$scope", "$location", "auth0Service", function ($scope, $location, auth0Service) {
+  .controller("LoginCtrl", ["auth0Service", function (auth0Service) {
 
     this.login = function(){
       auth0Service.login();
@@ -21,8 +21,4 @@ packebianApp
     this.logout = function(){
       auth0Service.logout();
     };
-
-    // this.isAuthenticated = function() {
-    //   return auth0Service.isAuthenticated();
-    // }
   }]);

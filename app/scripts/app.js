@@ -59,7 +59,7 @@ packebianApp
 				controller: "FaqCtrl",
 				controllerAs: "faq"
 			});
-		$urlRouterProvider.otherwise('/login');
+		$urlRouterProvider.otherwise("/search");
 
 		/* auth0 - lock */
 		lockProvider.init({
@@ -83,7 +83,7 @@ packebianApp
 
 		// Remove the ! from the hash so that
     // auth0.js can properly parse it
-    $locationProvider.hashPrefix('');
+    $locationProvider.hashPrefix("");
 
 		// Add the jwtInterceptor to the array of HTTP interceptors
 		// so that JWTs are attached as Authorization headers
