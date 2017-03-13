@@ -1,6 +1,7 @@
 <!--
-    Created on : 7 févr. 2017, 09:58:32
-    Author     : Germain Lecorps and Régis Ramel
+    Created on	: 7 févr. 2017, 09:58:32
+    Author		: Germain Lecorps and Régis Ramel
+	Page		: Login page
 -->
 
 <link rel="stylesheet" type="text/css" href="../styles/login.css">
@@ -10,6 +11,7 @@
 </header>
 <div>
 	<form id="form" name="form" role="form">
+		<!--Login form-->
 		<div class="login_form">
 			<label class="login_label" for="username">
 				Username
@@ -23,6 +25,7 @@
 			<input type="password" name="password" id="password" class="login_input">
 		</div>
 		<div class="login_actions">
+			<!--Login button calls the function login in login.js-->
 			<button type="submit" class="btn" ng-click="login.login()">
 				Login
 			</button>

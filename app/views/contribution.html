@@ -1,20 +1,24 @@
 <!--
 		Created on	: 7 févr. 2017, 09:58:32
 		Author		: Germain Lecorps and Régis Ramel
+		Page		: Contribution page
 -->
 <div>
 	<div class="contact-us container">
 		<h1>Formulaire de contribution</h1>
 		<form class="contact-us">
 			<p>Ceci est la page proposant le formulaire d'ajout d'un package par un contributeur</p>
-			<!-- Type of source push -->
+			<!--Type of source push-->
 			<label for="name_package" id="typepLabel">Type de dépôt</label><br>
+			<!--Tarball-->
 			<label class="filiere-checkbox">
 				<input type="radio" name="depot" value='tarball' ng-model="form.repoType">Dépôt d'archive<br>
 			</label>
+			<!--Link to tarball-->
 			<label class="filiere-checkbox">
 				<input type="radio" name="depot" value='tarballLink' ng-model="form.repoType">Lien de l'archive<br>
 			</label>
+			<!--Link to git-->
 			<label class="filiere-checkbox">
 				<input type="radio" name="depot" value='gitLink' ng-model="form.repoType">Lien Git<br>
 			</label>
@@ -24,7 +28,7 @@
 				<!-- Tarball -->
 				<div id="ajoutArchive" ng-show="form.repoType === 'tarball'">
 					<input type=file id=fichier name=fichier/>
-					<button ng-click=ajouter()>Ajouter</button><br>
+					<button ng-click="ajouter()">Ajouter</button><br>
 				</div>
 
 				<!-- Tarball link -->
@@ -37,11 +41,14 @@
 					<input id="lienGit" type="text" name="lien_git" placeholder="Lien Git..."><br>
 				</div>
 
-				<!--Description du package-->
+				<!--Package description-->
+				<!--Package name-->
 				<label for="name_package" id="namepLabel">Nom du package</label><br>
 				<input id="name_package" type="text" name="name_package" placeholder="Entrez le nom du package..."><br>
+				<!--Package version-->
 				<label for="version" id="versionLabel">Version du package</label><br>
 				<input id="version_package" type="text" name="name_package" placeholder="Entrez la version du package sous la forme majeure.mineure.fix..."><br>
+				<!--Package architecture-->
 				<label for="architecture" id="architectureLabel">Architecture du package</label><br>
 				<select id="architecture_package" name="version">
 					<option value="ubuntu">Ubuntu</option>
@@ -49,8 +56,10 @@
 					<option value="windows">Windows</option>
 					<option value="autre">Autre</option>
 				</select><br>
+				<!--Package maintainer-->
 				<label for="maintainer" id="maintainerLabel">Maintainer</label><br>
 				<input id="maintainer_package" type="text" name="maintainer" placeholder="Entrez votre nom et prénom..."><br>
+				<!--Major concerned by the package-->
 				<label for="major" id="majorLabel">Filière</label><br>
 				<label class="major-checkbox">
 					<input type="radio" name="major_package" value="RICM3">
@@ -65,12 +74,16 @@
 					RICM5
 				</label>
 				<br>
+				<!--Class concerned by the package-->
 				<label for="class">Matière</label><br>
 				<input id="class_package" type="text" name="class" placeholder="Entrez la matière désirée..."><br>
+				<!--Package description-->
 				<label for="description" id="descriptionLabel">Description</label><br>
 				<textarea id="message_package" name="message" placeholder="Description du package..."></textarea><br>
+				<!--Package dependancies-->
 				<label for="dependance" id="dependanceLabel">Dépendances</label><br>
 				<input id="dependance_package" type="text" name="dependance" placeholder="Entrez les dépendances nécessaires pour le package séparées par un ;"><br>
+				<!--Submit button, class contribution in contribution.js-->
 				<button type="submit" ng-click="contribution(1)">Valider</button>
 			</div>
 		</form>
