@@ -20,23 +20,28 @@ packebianApp
 		$scope.contribution = function(user) {
 			var method = "POST";
 			var url = Environment.getApiAddress("/tickets/");
+			var major = "";
+			var majors = document.getElementsByName("major_package");
+			for (var i = 0, length = majors.length; i < length; i++) {
+				if (majors[i].checked) {
+					major = majors[i].value;
+					break;
+				}
+			}
+			
 			var req = {
 				method: method,
 				url: url,
 				data: {
 					"user": user,
-					"name": "toto",
-					"maintainer": "naida@nichols.net",
-					"architecture": "all",
-					"major": "RICM3",
-					"class": "ALM",
-					"description": "Code you processor",
-					"dependencies": "gcc",
-					"versions": [
-						"1.0",
-						"1.1",
-						"1.2"
-					]
+					"name": document.getElementById("name_package").value,
+					"maintainer": document.getElementById("maintainer_package").value,
+					"architecture": document.getElementById("architecture_package").value,
+					"major": major,
+					"class": document.getElementById("class_package").value,
+					"description": document.getElementById("message_package").value,
+					"dependencies": document.getElementById("dependance_package").value,
+					"versions": [document.getElementById("version_package").value]
 				},
 				headers: {
 					"Content-Type": "application/json; charset=utf-8"

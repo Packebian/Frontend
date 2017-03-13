@@ -50,27 +50,27 @@
 					<option value="autre">Autre</option>
 				</select><br>
 				<label for="maintainer" id="maintainerLabel">Maintainer</label><br>
-				<input id="maintainer" type="text" name="maintainer" placeholder="Entrez votre nom et prénom..."><br>
-				<label for="filiere" id="filiereLabel">Filière</label><br>
-				<label class = "filiere-checkbox">
-					<input type="checkbox" id="cbox1" value="RICM3">
+				<input id="maintainer_package" type="text" name="maintainer" placeholder="Entrez votre nom et prénom..."><br>
+				<label for="major" id="majorLabel">Filière</label><br>
+				<label class="major-checkbox">
+					<input type="radio" name="major_package" value="RICM3">
 					RICM3
 				</label>
-				<label class = "filiere-checkbox">
-					<input type="checkbox" id="cbox2" value="RICM4">
+				<label class="major-checkbox">
+					<input type="radio" name="major_package" value="RICM4">
 					RICM4
 				</label>
-				<label class = "filiere-checkbox">
-					<input type="checkbox" id="cbox3" value="RICM5">
+				<label class="major-checkbox">
+					<input type="radio" name="major_package" value="RICM5">
 					RICM5
 				</label>
 				<br>
-				<label for="matiere">Matière</label><br>
-				<input id="matiere" type="text" name="matiere" placeholder="Entrez la matière désirée..."><br>
+				<label for="class">Matière</label><br>
+				<input id="class_package" type="text" name="class" placeholder="Entrez la matière désirée..."><br>
 				<label for="description" id="descriptionLabel">Description</label><br>
-				<textarea id="message" name="message" placeholder="Description du package..."></textarea><br>
+				<textarea id="message_package" name="message" placeholder="Description du package..."></textarea><br>
 				<label for="dependance" id="dependanceLabel">Dépendances</label><br>
-				<input id="dependance" type="text" name="dependance" placeholder="Entrez les dépendances nécessaires pour le package séparées par un ;"><br>
+				<input id="dependance_package" type="text" name="dependance" placeholder="Entrez les dépendances nécessaires pour le package séparées par un ;"><br>
 				<button type="submit" ng-click="contribution(1)">Valider</button>
 			</div>
 		</form>
