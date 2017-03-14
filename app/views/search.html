@@ -1,28 +1,34 @@
 <!--
-		Created on	: 7 févr. 2017, 09:58:32
-		Author		: Germain Lecorps and Régis Ramel
+	Created on	: 7 févr. 2017, 09:58:32
+	Author		: Germain Lecorps and Régis Ramel
+	Page		: Package search page
 -->
 
-<h1>Liste des Packages</h1>
+
 <div>
+	<h1>Liste des Packages</h1>
 	<div class="tableBfont">
 		<div class="wrapperB">
-			<input ng-model="search.userQuery" ng-change="search.setSearchFilter()" type="text" placeholder="Rechercher..." />
+			<!--Search text area-->
+			<input ng-model="search.userQuery" ng-change="search.setSearchFilter()" type="text" placeholder="Rechercher..."/>
+			<!--Search criteria selector, set searchOn and calls setSearchFilter in search.js-->
 			<select ng-model="search.searchOn" ng-change="search.setSearchFilter()">
-				<option value="$">Any</option>
-				<option value="name">Nom</option>
-				<option value="class">Matière</option>
-				<option value="major">Filière</option>
-				<option value="maintainer">Responsable</option>
+				<option value="$">			Any</option>
+				<option value="name">		Nom</option>
+				<option value="class">		Matière</option>
+				<option value="major">		Filière</option>
+				<option value="maintainer">	Responsable</option>
 			</select>
-			</br/></br>
+			<br><br>
 			<table class="tableB" border="1" width="100%">
+				<!--Table titles with function to sort packages-->
 				<tr class="rowB headerB blue" >
 					<th style="text-align: center" ng-click="search.orderByMe('name')">Nom</th>
 					<th style="text-align: center" ng-click="search.orderByMe('maintainer')">Responsable</th>
 					<th style="text-align: center" ng-click="search.orderByMe('major')">Filière</th>
 					<th style="text-align: center" ng-click="search.orderByMe('class')">Matière</th>
 				</tr>
+				<!--Display packages-->
 				<tr class="rowB" ng-repeat="package in search.data | filter: search.searchFilter | orderBy: vm.order">
 					<td class="cellB">{{package.name}}</td>
 					<td class="cellB">{{package.maintainer}}</td>

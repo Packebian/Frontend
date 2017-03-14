@@ -8,8 +8,8 @@
  * Service in the Packebian app.
  */
 packebianApp
-  .service("auth0Service", ["Environment", "lock", "authManager", "$state", "$q", "$http", "auth0",
-  function auth0Service(Environment, lock, authManager, $state, $q, $http, auth0) {
+  .service("auth0Service", ["Environment", "lock", "authManager", "$state", "$q", "$http", "auth0", "jwtHelper",
+  function auth0Service(Environment, lock, authManager, $state, $q, $http, auth0, jwtHelper) {
 
     var userInfos = JSON.parse(localStorage.getItem(auth0.STORAGE_USERINFOS)) || null;
     var deferredUserInfos = $q.defer();
@@ -39,7 +39,7 @@ packebianApp
       lock.on("authenticated", function(authResult) {
         authManager.authenticate();
 
-        lock.getProfile(authResult.idToken, function(error, profile) {
+        lock.getProfile(authResult.idToken, function(error, auth0profile) {
           if(error) {
             return console.log(error);
           }
@@ -48,15 +48,14 @@ packebianApp
           var reqUrl = Environment.getApiAddress("/login") + "?type=auth0";
           var reqData = JSON.stringify ({"token": authResult.idToken});
           var reqOptions = JSON.stringify ({"Content-Type": "application/json"});
-
           $http.post(reqUrl, reqData, reqOptions)
             .then(function(response) {
-              userInfos = {"token": response.data.token, "auth0Token": authResult.idToken, "user": profile};
+              var profile = jwtHelper.decodeToken(response.data.token);
+              userInfos = {"token": response.data.token, "user": profile,"auth0Token": authResult.idToken, "auth0user": auth0profile};
               localStorage.setItem(auth0.STORAGE_USERINFOS, JSON.stringify(userInfos));
               deferredUserInfos.resolve(userInfos);
 
               $http.defaults.headers.common.Authorization = "Bearer " + response.data.token;
-
               $state.go("search");
             }, function(response) {
               console.log("error - ", response);

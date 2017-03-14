@@ -9,20 +9,20 @@
  */
 packebianApp
 	.service("Environment", function Environment() {
-		// AngularJS will instantiate a singleton by calling "new" on this function
+		//AngularJS will instantiate a singleton by calling "new" on this function
 		var env = "http://localhost:9000";
 		var apiAddress = "http://192.168.99.100:1337";
 
 		/**
-		 * @returns {string} the environment url
+		 * @returns {string} : The environment url
 		 */
 		this.getEnvironment = function() {
-				return env;
+			return env;
 		};
 
 
 		/**
-		 * @returns {string} the api address along the path 'target‘ if provided
+		 * @returns {string} : The api address along the path 'target‘ if provided
 		 */
 		this.getApiAddress = function(target) {
 			return apiAddress + target;
