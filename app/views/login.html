@@ -11,6 +11,8 @@
 <div>
 	<div>
 		<h1 ng-if="isAuthenticated">Hello {{main.userInfos.user.name}}</h1>
+		<p ng-if="isAuthenticated">AUTH0 TOKEN : {{main.userInfos.auth0Token}}</p>
+		<p ng-if="isAuthenticated">SAILS TOKEN : {{main.userInfos.token}}</p>
 		<button ng-if="!isAuthenticated" ng-click="main.login()">Log In</button>
 
 		<button ng-if="isAuthenticated" ng-click="main.logout()">Log Out</button>

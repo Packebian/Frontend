@@ -41,6 +41,7 @@ packebianApp
     // Register synchronous hash parser
     lock.interceptHash();
 
+    /* Force unauthenticated users to be redirected to home page */
     $rootScope.$on("$stateChangeStart", function(event, toState){
       if (toState.authenticate && !authManager.isAuthenticated()){
         $state.go("home");
