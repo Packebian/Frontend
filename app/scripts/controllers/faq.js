@@ -8,29 +8,28 @@
 /**
  * @ngdoc function
  * @name packebianApp.controller:FaqCtrl
- * @argument $scope
+ * @argument $http
  * @description
  * # FaqCtrl
  * Controller of the frontendApp
  */
 packebianApp
-	.controller("FaqCtrl", function ($scope, $http) {
-
+	.controller("FaqCtrl", function ($http) {
 		var vm = this;
 		this.tutos = [];
 		this.faqs = [];
 
-		/* Récupère les tutos */
+		//Tutorials obtention
 		$http.get("../json/tutos.json").then(function(data) {
 			vm.tutos = data.data;
-		}, function Error(data) {
+		}, function(data) {
 			console.log(data);
 		});
 
-		/* Récupère les FAQs */
+		//FAQ obtention
 		$http.get("../json/faq.json").then(function(data) {
 			vm.faqs = data.data;
-		}, function Error(data) {
+		}, function(data) {
 			console.log(data);
 		});
 

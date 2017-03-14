@@ -20,11 +20,16 @@ var packebianApp = angular.module("packebianApp", [
 
 packebianApp
 	.controller("ControllerMain", function ControllerMain($scope, $location) {
+		//Current user
+		$scope.user = 1;
 		
-		/*Variables d'affichage*/
+		//Display variables
 		$scope.displayVal = false;
 
-		/*Privilèges administrateur*/
+		/**
+		 * @param {type} user : User to check admin status
+		 * @returns {Boolean}
+		 */
 		this.isAdmin = function(user) {
 			if(user === "laRoulade") {
 				return true;
@@ -33,7 +38,10 @@ packebianApp
 			}
 		};
 
-		/*Current page*/
+		/**
+		 * @param {type} path : Path to the page
+		 * @returns {String}
+		 */
 		this.currentPage = function(path) {
 			return ($location.path().substr(0, path.length) === path) ? "current-page" : "";
 		};

@@ -1,6 +1,6 @@
 /*
-		Created on : 7 févr. 2017, 09:58:32
-		Author		 : Germain Lecorps and Régis Ramel
+	Created on	: 7 févr. 2017, 09:58:32
+	Author		: Germain Lecorps and Régis Ramel
 */
 
 "use strict";
@@ -17,9 +17,14 @@
  */
 packebianApp
 	.controller("ContributionCtrl", ["$scope", "$http", "Environment", function ($scope, $http, Environment) {
+		/**
+		 * @param {type} user : user who posts the tickets
+		 * @returns {undefined}
+		 */
 		$scope.contribution = function(user) {
 			var method = "POST";
 			var url = Environment.getApiAddress("/tickets/");
+			//Major obtention
 			var major = "";
 			var majors = document.getElementsByName("major_package");
 			for (var i = 0, length = majors.length; i < length; i++) {
@@ -29,6 +34,7 @@ packebianApp
 				}
 			}
 			
+			//Content of the POST request
 			var req = {
 				method: method,
 				url: url,
@@ -48,6 +54,7 @@ packebianApp
 				}
 			};
 			
+			//HTTP POST Request
 			$http(req).then(function(data) {
 				console.log(data);
 			}, function(data) {

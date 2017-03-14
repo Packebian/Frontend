@@ -13,9 +13,11 @@
  */
 packebianApp
 	.controller("LoginCtrl", function ($scope, $location) {
-
-		/*Fonction de login*/
+		/**
+		 * @returns {undefined}
+		 */
 		this.login = function() {
+			//var bypass used fo testing, allows to skip the authentication phase
 			var bypass = false;
 			$scope.username = "";
 			$scope.password = "";
@@ -24,7 +26,8 @@ packebianApp
 				$location.path("/search");
 				return;
 			}
-
+			
+			//Login parameters
 			var realUsername = document.getElementById("username").value;
 			var realPassword = document.getElementById("password").value;
 
