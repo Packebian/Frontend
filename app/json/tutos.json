@@ -1,11 +1,19 @@
 [
 	{
-		"name" : "Tutoriel d'installation :",
-		"content" : "Faut faire sudo apt-get install." 
+		"name" : "Tutoriel de recherche des packages :",
+		"content" : "La page \"Liste des Packages\" affiche l'ensemble des packages disponible sur le repository. La table présente le nom des packages, ainsi que le responsable, la filière et la matière concernées. Il est possible de faire une recherche en entrant une chaine de caractères et d'appliquer cette recherche aux différents attributs des packages. En cliquant sur les titres des colonnes, les packages se trient en fonction de l'attribut correspondant." 
+	},
+	{
+		"name" : "Tutoriel de recherche des tickets :",
+		"content" : "La page \"Liste des Tickets\" affiche l'ensemble des tickets déposés sur le site. La table présente le nom des tickets, ainsi que le responsable, la filière et la matière concernées, le résultat actuel des votes sur ce ticket, ainsi que les boutons permettant de voter pour le ticket. Il est possible de faire une recherche en entrant une chaine de caractères et d'appliquer cette recherche aux différents attributs des tickets. En cliquant sur les titres des colonnes, les tickets se trient en fonction de l'attribut correspondant. Il est pour le moment impossible de trier les tickets en fonction du résultat des votes. Pour le fonctionnement des votes, voir \"Tutoriel de vote\". Si l'utilisateur dispose des privilèges administrateur, un bouton \"Valider\" apparait pour lancer le processus de création d'un package." 
+	},
+	{
+		"name" : "Tutoriel de vote :",
+		"content" : "Pour chaque ticket, l'utilisateur peut déposer un vote pour approuver/désapprouver la création d'un package pour l'outil. Pour cela, deux boutons - et + permettent de déposer respectivement un vote négatif ou positif. Si l'utilisateur a déjà voté, il peut changer son vote à tout moment en sélectionnant l'autre bouton. Il peut également annuler son vote en cliquant sur le bouton qui correspond à son vote. Ex : Si j'ai déjà voté +, je peux changer mon vote en cliquant sur -, ou annuler mon vote en cliquant à nouveau sur +."
 	},
 	{
 		"name" : "Tutoriel de contribution :",
-		"content" : "C'est pour déposer des packages." 
+		"content" : "Le formulaire de contribution disponible sur la page \"Contribution\" permet de déposer un ticket pour proposer un outil à la création de packages. Le formulaire consiste en un dépôt d'informations pour définir l'outil. L'utilisateur doit fournir un lien vers l'outil (Tarball, git). Il doit entrer un nom pour le package, son adresse mail pour se définir comme maintainer (responsable), l'architecture du package (Ubuntu, Debian, ...) et la filière et la matière concernée par l'outil. L'utilisateur doit également renseigné les dépendances de l'outil, la version, ainsi qu'une description sur l'intérêt de l'outil demandé."
 	}
 ]
 

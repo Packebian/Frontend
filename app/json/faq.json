@@ -1,11 +1,15 @@
 [
 	{
-		"question" : "Monsieur, comment on fait une matrice en Python ?",
-		"answer" : "Je sais pas, cherche sur Google."
+		"question" : "Qui peut déposer un ticket ?",
+		"answer" : "Les enseignants et les étudiants peuvent déposer un ticket, à condition d'avoir des identifiants pour se logguer sur l'application."
 	},
 	{
-		"question" : "Papa, c'est quoi cette bouteille de lait ?",
-		"answer" : "Tu vois, ça c'est ma bite, et ça c'est ta mère !" 
+		"question" : "Qui peut valider un ticket ?",
+		"answer" : "Seuls les enseignants peuvent valider la création d'un package à partir d'un ticket." 
+	},
+	{
+		"question" : "Peut-on voter plusieurs fois pour un ticket ?",
+		"answer" : "Non. Un utilisateur ne peut voter qu'une fois par ticket. POur savoir comment fonctionnent les votes, voir le \nTutoriel de vote\"." 
 	}
 ]
 
