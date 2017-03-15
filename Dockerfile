@@ -21,10 +21,10 @@ RUN bower --allow-root prune && bower install --quiet --allow-root
 VOLUME ["/srv/angular"]
 
 # Expose sails default port
-EXPOSE 9000 9001
+EXPOSE 9000 9001 35729
 
 # Envrionment
-ENV API_URL="192.168.99.100:1337"
+ENV API_URL="http://192.168.99.100:1337"
 
 # Start application
 CMD grunt serve
