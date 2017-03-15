@@ -3,6 +3,8 @@
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.15.1.
 
+[![Build Status](https://travis-ci.org/Packebian/Frontend.svg?branch=master)](https://travis-ci.org/Packebian/Frontend)
+
 ## env.sh
 The file env.sh contains environment variables used to setup the envrionment.
 ```sh
