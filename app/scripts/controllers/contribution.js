@@ -22,7 +22,7 @@ packebianApp
 		 * @param {type} user : user who posts the tickets
 		 * @returns {undefined}
 		 */
-		$scope.contribution = function(user) {
+		$scope.contribution = function() {
 			var method = "POST";
 			var url = Environment.getApiAddress("/tickets/");
 			//Major obtention
@@ -56,7 +56,7 @@ packebianApp
 			};
 
 			//HTTP POST Request
-			$http(req).then(function(data) {
+			$http(req).then(function() {
 				$state.go("tickets");
 			}, function(data) {
 				console.log(data);
