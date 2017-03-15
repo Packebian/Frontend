@@ -427,17 +427,27 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    run: {
+      clean: {
+        cmd: './clean.sh',
+      },
+      prepare: {
+        cmd: './prepare.sh',
+      }
     }
   });
 
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
-      return grunt.task.run(['build', 'connect:dist:keepalive']);
+      return grunt.task.run(['run:prepare', 'build', 'connect:dist:keepalive']);
     }
 
     grunt.task.run([
       'clean:server',
+      'run:prepare',
       'wiredep',
       'concurrent:server',
       'postcss:server',
@@ -453,6 +463,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', [
     'clean:server',
+    'run:prepare',
     'wiredep',
     'concurrent:test',
     'postcss',
@@ -482,6 +493,7 @@ module.exports = function (grunt) {
     'newer:jshint',
     'newer:jscs',
     'test',
+    'run:prepare',
     'build'
   ]);
 };
