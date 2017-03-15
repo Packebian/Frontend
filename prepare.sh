@@ -1,9 +1,5 @@
 #!/bin/sh
 
-echo $(pwd)
-ls
-ls app/scripts/services/
-
 # Start by cleanning everything
 ./clean.sh
 
